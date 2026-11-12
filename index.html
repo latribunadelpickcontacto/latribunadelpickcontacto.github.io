@@ -6,12 +6,12 @@
 <title>La Tribuna del Pick · Sports Analytics &amp; Research</title>
 <meta name="description" content="La Tribuna del Pick: análisis deportivo con método, datos y resultados transparentes. Sports analytics and research for football, NBA and NFL. 18+ · Play responsibly.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a1424; --bg2:#0e1c32; --panel:#122240; --line:#223a5e;
-    --acc:#c9a24a; --acc2:#e6c878; --txt:#e8edf5; --mut:#9db0c9; --ok:#4cc38a;
-    --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --sans:Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    --bg:#0B0C0E; --bg2:#101215; --panel:#141619; --line:rgba(212,175,55,.16);
+    --acc:#C5A059; --acc2:#E5C77B; --txt:#F8F9FA; --mut:#9CA3AF; --ok:#4cc38a;
+    --serif:"Playfair Display",Georgia,"Times New Roman",serif; --sans:Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
   }
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
@@ -20,7 +20,7 @@
   /* idioma */
   body.en .es{display:none!important} body:not(.en) .en{display:none!important}
   /* header */
-  header{position:sticky;top:0;z-index:10;background:rgba(10,20,36,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:10;background:rgba(11,12,14,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--txt)}
   .brand img{width:40px;height:40px;border-radius:8px;border:1px solid var(--line)}
@@ -30,11 +30,11 @@
   nav a{color:var(--mut);text-decoration:none;font-size:.9rem} nav a:hover{color:var(--txt)}
   .lang{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
   .lang button{background:transparent;color:var(--mut);border:0;padding:6px 11px;font:600 .78rem var(--sans);cursor:pointer}
-  .lang button.on{background:var(--acc);color:#0a1424}
-  .btn{display:inline-block;background:var(--acc);color:#0a1424;font-weight:600;text-decoration:none;padding:12px 22px;border-radius:8px;border:1px solid var(--acc);font-size:.95rem}
+  .lang button.on{background:var(--acc);color:#0B0C0E}
+  .btn{display:inline-block;background:var(--acc);color:#0B0C0E;font-weight:600;text-decoration:none;padding:12px 22px;border-radius:8px;border:1px solid var(--acc);font-size:.95rem}
   .btn:hover{background:var(--acc2)} .btn.sec{background:transparent;color:var(--txt);border-color:var(--line)} .btn.sec:hover{border-color:var(--acc)}
   /* hero */
-  .hero{padding:78px 0 56px;background:radial-gradient(1000px 420px at 85% -10%,rgba(201,162,74,.14),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2))}
+  .hero{padding:78px 0 56px;background:radial-gradient(1000px 420px at 85% -10%,rgba(197,160,89,.07),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2))}
   .eyebrow{color:var(--acc2);font-size:.82rem;letter-spacing:2.2px;text-transform:uppercase;font-weight:600}
   h1{font-family:var(--serif);font-size:clamp(2.1rem,4.8vw,3.4rem);line-height:1.12;margin:12px 0 18px;max-width:780px;font-weight:700}
   .lead{color:var(--mut);font-size:1.12rem;max-width:660px}
@@ -43,12 +43,14 @@
   .kpi{background:var(--panel);padding:20px 22px} .kpi b{display:block;font-family:var(--serif);font-size:1.9rem;color:var(--acc2);line-height:1.1}
   .kpi span{color:var(--mut);font-size:.88rem}
   /* secciones */
-  section{padding:64px 0;border-top:1px solid var(--line)} section.alt{background:var(--bg2)}
+  section{padding:84px 0;border-top:1px solid var(--line)} section.alt{background:var(--bg2)}
   h2{font-family:var(--serif);font-size:1.9rem;margin:6px 0 10px;font-weight:700}
   p.sub{color:var(--mut);max-width:700px;margin:0 0 32px}
   .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
   .desk{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
   .desk img{height:64px;width:64px;border-radius:50%;object-fit:cover;object-position:top;margin:20px 18px 0;border:2px solid var(--acc)}
+  .badge{display:inline-block;border:1px solid var(--acc);color:var(--acc2);font-size:.72rem;letter-spacing:2px;font-weight:600;padding:3px 10px;border-radius:999px;margin-bottom:12px}
+  .kpi b,.price,table,.step::before{font-variant-numeric:tabular-nums}
   .lnk{color:var(--txt);text-decoration:none;padding:12px 6px;border-bottom:1px solid var(--acc);font-size:.95rem}.lnk:hover{color:var(--acc2)}
   .desk .b{padding:16px 18px 20px} .desk h3{margin:0 0 4px;font-family:var(--serif);font-size:1.1rem} .desk p{margin:0;color:var(--mut);font-size:.92rem}
   .tag{display:inline-block;color:var(--acc2);font-size:.78rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;margin-bottom:6px}
@@ -57,7 +59,7 @@
   .step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:1.5rem;color:var(--acc);line-height:1.3}
   .step b{color:var(--txt)} .step span{color:var(--mut)} .step b span{color:var(--txt)}
   table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:.95rem}
-  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line)} th{color:var(--acc2);font-size:.75rem;letter-spacing:1.4px;text-transform:uppercase;background:#0f2038}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line)} th{color:var(--acc2);font-size:.75rem;letter-spacing:1.4px;text-transform:uppercase;background:#0F1114}
   tr:last-child td{border-bottom:0} td.m{color:var(--mut)}
   .note{color:var(--mut);font-size:.9rem;margin-top:12px}
   .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
@@ -68,7 +70,7 @@
   .price b{color:var(--txt)} .price span{color:var(--mut)} .price b span{color:var(--txt)} .price i{font-style:normal;color:var(--acc2)}
   details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}
   summary{cursor:pointer;font-weight:600} details p{color:var(--mut);margin:10px 0 0}
-  .risk{background:#0c192c;border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:10px;padding:24px 26px}
+  .risk{background:#0F1114;border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:10px;padding:24px 26px}
   .risk h2{margin-top:0} .risk ul{color:var(--mut);padding-left:20px} .risk p{color:var(--mut)}
   footer{padding:32px 0 56px;border-top:1px solid var(--line);color:var(--mut);font-size:.9rem}
   footer a{color:var(--mut)}
@@ -148,7 +150,7 @@
   <p class="sub"><span class="es">Empieza gratis. Si te gusta, el VIP te da todo el día de análisis.</span><span class="en">Start for free. If you like it, VIP gives you the full day of analysis.</span></p>
   <div class="plans">
     <div class="plan"><h3><span class="es">Canal gratis</span><span class="en">Free channel</span></h3><ul><li><span class="es">3 picks al día</span><span class="en">3 picks per day</span></li><li><span class="es">Aviso diario de la jornada</span><span class="en">Daily match-day briefing</span></li><li><span class="es">Balance semanal y mensual</span><span class="en">Weekly and monthly reports</span></li></ul><a class="btn sec" href="https://t.me/LaTribunaDelPick"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><path d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.6 13.2 1.9 11.7c-1-.3-1-1 .2-1.5L20.5 3.1c.9-.3 1.6.2 1.4 1.2z"/></svg><span class="es">Entrar gratis</span><span class="en">Join for free</span></a></div>
-    <div class="plan feat"><h3>VIP</h3><ul><li><span class="es">Todos los picks y combinadas del día</span><span class="en">All picks and parlays of the day</span></li><li><span class="es">Cuota, stake y resultado de cada uno</span><span class="en">Odds, stake and outcome of each</span></li><li><span class="es">Publicación anticipada</span><span class="en">Early publication</span></li><li><span class="es">Soporte en menos de 24 horas</span><span class="en">Support within 24 hours</span></li></ul>
+    <div class="plan feat"><span class="badge">PRIVATE DESK</span><h3>VIP</h3><ul><li><span class="es">Todos los picks y combinadas del día</span><span class="en">All picks and parlays of the day</span></li><li><span class="es">Cuota, stake y resultado de cada uno</span><span class="en">Odds, stake and outcome of each</span></li><li><span class="es">Publicación anticipada</span><span class="en">Early publication</span></li><li><span class="es">Soporte en menos de 24 horas</span><span class="en">Support within 24 hours</span></li></ul>
       <div class="price"><b><span class="es">Día</span><span class="en">Day</span></b><span>US$3 <i>· $10.000 COP</i></span></div>
       <div class="price"><b><span class="es">Semana (8 días)</span><span class="en">Week (8 days)</span></b><span>US$15 <i>· $50.000 COP</i></span></div>
       <div class="price" style="margin-bottom:16px"><b><span class="es">Mes (30 días)</span><span class="en">Month (30 days)</span></b><span>US$45 <i>· $150.000 COP</i></span></div>
