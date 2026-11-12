@@ -3,137 +3,201 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La Tribuna del Pick · Análisis deportivo</title>
-<meta name="description" content="Análisis deportivo con método y comunidad. Picks diarios de fútbol, NBA y NFL con cuota, stake y resultado. +18 · Juega con responsabilidad.">
+<title>La Tribuna del Pick · Sports Analytics &amp; Research</title>
+<meta name="description" content="La Tribuna del Pick: análisis deportivo con método, datos y resultados transparentes. Sports analytics and research for football, NBA and NFL. 18+ · Play responsibly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#08110c; --bg2:#0f1d15; --panel:#13241a; --line:#2c4a38;
-    --oro:#e8be46; --oro2:#ffe082; --txt:#eef4ef; --mut:#a9bdb0; --ok:#2ecc71;
+    --bg:#0a1424; --bg2:#0e1c32; --panel:#122240; --line:#223a5e;
+    --acc:#c9a24a; --acc2:#e6c878; --txt:#e8edf5; --mut:#9db0c9; --ok:#4cc38a;
+    --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --sans:Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
   }
   *{box-sizing:border-box} html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--txt);font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;line-height:1.6}
-  a{color:var(--oro2)} img{max-width:100%;display:block}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-  header{position:sticky;top:0;z-index:5;background:rgba(8,17,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
-  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px;text-decoration:none;color:var(--txt)}
-  .brand img{width:42px;height:42px;border-radius:50%}
-  .brand span b{color:var(--oro)}
-  nav a{color:var(--mut);text-decoration:none;margin-left:18px;font-size:.95rem} nav a:hover{color:var(--oro2)}
-  .btn{display:inline-block;background:linear-gradient(180deg,var(--oro2),var(--oro));color:#1a1405;font-weight:800;text-decoration:none;padding:13px 24px;border-radius:999px;border:0}
-  .btn.sec{background:transparent;color:var(--oro2);border:2px solid var(--oro)}
-  .hero{padding:64px 0 48px;background:radial-gradient(900px 400px at 75% 0%,rgba(232,190,70,.18),transparent 60%)}
-  .hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
-  h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;margin:0 0 16px;font-weight:900}
-  h1 em{font-style:normal;color:var(--oro)}
-  .lead{color:var(--mut);font-size:1.15rem;max-width:560px}
-  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-  .hero img{border-radius:24px;border:2px solid var(--oro);box-shadow:0 0 60px rgba(232,190,70,.2)}
-  section{padding:56px 0} section.alt{background:var(--bg2)}
-  h2{font-size:1.9rem;margin:0 0 8px} h2 + p.sub{color:var(--mut);margin:0 0 28px;max-width:640px}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-  .card img{aspect-ratio:3/4;object-fit:cover;width:100%}
-  .card .b{padding:16px 18px 20px} .card h3{margin:0 0 4px;color:var(--oro2)} .card p{margin:0;color:var(--mut);font-size:.95rem}
-  .steps{counter-reset:s;display:grid;gap:14px}
-  .step{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px 16px 64px;position:relative}
-  .step::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:14px;width:34px;height:34px;border-radius:50%;background:var(--oro);color:#1a1405;font-weight:900;display:grid;place-items:center}
-  .step b{color:var(--oro2)}
-  .vals{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-  .val{border-left:3px solid var(--oro);padding:4px 0 4px 14px} .val b{display:block;color:var(--oro2)} .val span{color:var(--mut);font-size:.95rem}
-  .planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-  .plan{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px}
-  .plan.vip{border:2px solid var(--oro)} .plan h3{margin:0 0 8px} .plan ul{padding-left:18px;color:var(--mut)} .plan li{margin:6px 0}
-  details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:10px 0}
-  summary{cursor:pointer;font-weight:700;color:var(--oro2)} details p{color:var(--mut);margin:10px 0 0}
-  .resp{background:linear-gradient(180deg,#1a1710,#120f08);border:1px solid #5c4a1a;border-radius:20px;padding:24px}
-  footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--mut);font-size:.9rem}
-  @media(max-width:760px){.hero .grid{grid-template-columns:1fr}.hero img{max-width:340px;margin:0 auto}nav{display:none}}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--acc2)} img{max-width:100%;display:block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  /* idioma */
+  body.en .es{display:none!important} body:not(.en) .en{display:none!important}
+  /* header */
+  header{position:sticky;top:0;z-index:10;background:rgba(10,20,36,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--txt)}
+  .brand img{width:40px;height:40px;border-radius:8px;border:1px solid var(--line)}
+  .brand b{font-family:var(--serif);font-size:1.12rem;letter-spacing:.2px;display:block;line-height:1.1}
+  .brand small{display:block;color:var(--mut);font-size:.7rem;letter-spacing:1.6px;text-transform:uppercase}
+  nav{display:flex;align-items:center;gap:20px}
+  nav a{color:var(--mut);text-decoration:none;font-size:.9rem} nav a:hover{color:var(--txt)}
+  .lang{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .lang button{background:transparent;color:var(--mut);border:0;padding:6px 11px;font:600 .78rem var(--sans);cursor:pointer}
+  .lang button.on{background:var(--acc);color:#0a1424}
+  .btn{display:inline-block;background:var(--acc);color:#0a1424;font-weight:600;text-decoration:none;padding:12px 22px;border-radius:8px;border:1px solid var(--acc);font-size:.95rem}
+  .btn:hover{background:var(--acc2)} .btn.sec{background:transparent;color:var(--txt);border-color:var(--line)} .btn.sec:hover{border-color:var(--acc)}
+  /* hero */
+  .hero{padding:78px 0 56px;background:radial-gradient(1000px 420px at 85% -10%,rgba(201,162,74,.14),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2))}
+  .eyebrow{color:var(--acc2);font-size:.78rem;letter-spacing:2.2px;text-transform:uppercase;font-weight:600}
+  h1{font-family:var(--serif);font-size:clamp(2.1rem,4.8vw,3.4rem);line-height:1.12;margin:12px 0 18px;max-width:780px;font-weight:700}
+  .lead{color:var(--mut);font-size:1.12rem;max-width:660px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:48px}
+  .kpi{background:var(--panel);padding:20px 22px} .kpi b{display:block;font-family:var(--serif);font-size:1.9rem;color:var(--acc2);line-height:1.1}
+  .kpi span{color:var(--mut);font-size:.88rem}
+  /* secciones */
+  section{padding:64px 0;border-top:1px solid var(--line)} section.alt{background:var(--bg2)}
+  h2{font-family:var(--serif);font-size:1.9rem;margin:6px 0 10px;font-weight:700}
+  p.sub{color:var(--mut);max-width:700px;margin:0 0 32px}
+  .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .desk{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .desk img{height:170px;width:100%;object-fit:cover;object-position:top;filter:saturate(.9)}
+  .desk .b{padding:16px 18px 20px} .desk h3{margin:0 0 4px;font-family:var(--serif);font-size:1.1rem} .desk p{margin:0;color:var(--mut);font-size:.92rem}
+  .tag{display:inline-block;color:var(--acc2);font-size:.72rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+  .steps{display:grid;gap:12px;counter-reset:s}
+  .step{display:grid;grid-template-columns:44px 1fr;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:1.5rem;color:var(--acc);line-height:1.3}
+  .step b{color:var(--txt)} .step span{color:var(--mut)} .step b span{color:var(--txt)}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:.95rem}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line)} th{color:var(--acc2);font-size:.75rem;letter-spacing:1.4px;text-transform:uppercase;background:#0f2038}
+  tr:last-child td{border-bottom:0} td.m{color:var(--mut)}
+  .note{color:var(--mut);font-size:.85rem;margin-top:12px}
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .plan{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px}
+  .plan.feat{border-color:var(--acc)} .plan h3{font-family:var(--serif);margin:0 0 10px;font-size:1.3rem}
+  .plan ul{padding-left:18px;color:var(--mut);margin:0 0 18px} .plan li{margin:6px 0}
+  .price{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:8px 0}
+  .price b{color:var(--txt)} .price span{color:var(--mut)} .price b span{color:var(--txt)} .price i{font-style:normal;color:var(--acc2)}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}
+  summary{cursor:pointer;font-weight:600} details p{color:var(--mut);margin:10px 0 0}
+  .risk{background:#0c192c;border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:10px;padding:24px 26px}
+  .risk h2{margin-top:0} .risk ul{color:var(--mut);padding-left:20px} .risk p{color:var(--mut)}
+  footer{padding:32px 0 56px;border-top:1px solid var(--line);color:var(--mut);font-size:.85rem}
+  footer a{color:var(--mut)}
+  @media(max-width:820px){nav a.h{display:none}.hero{padding:52px 0 40px}}
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
-  <a class="brand" href="#inicio"><img src="logo.png" alt="Logo de La Tribuna del Pick"><span>LA TRIBUNA <b>DEL PICK</b></span></a>
-  <nav><a href="#equipo">Equipo</a><a href="#metodo">Método</a><a href="#vip">VIP</a><a href="#faq">Preguntas</a><a href="#responsable">Juego responsable</a></nav>
+  <a class="brand" href="#top"><img src="logo.png" alt="La Tribuna del Pick"><span><b>La Tribuna del Pick</b><small>Sports Analytics &amp; Research</small></span></a>
+  <nav>
+    <a class="h es" href="#nosotros">Nosotros</a><a class="h es" href="#metodologia">Metodología</a><a class="h es" href="#desempeno">Desempeño</a><a class="h es" href="#planes">Planes</a><a class="h es" href="#riesgo">Riesgos</a>
+    <a class="h en" href="#nosotros">About</a><a class="h en" href="#metodologia">Methodology</a><a class="h en" href="#desempeno">Performance</a><a class="h en" href="#planes">Plans</a><a class="h en" href="#riesgo">Risk</a>
+    <span class="lang"><button id="bes" class="on" type="button">ES</button><button id="ben" type="button">EN</button></span>
+  </nav>
 </div></header>
 
-<main>
-<section class="hero" id="inicio"><div class="wrap grid">
-  <div>
-    <h1>Análisis deportivo con <em>método</em> y comunidad.</h1>
-    <p class="lead">Picks diarios de fútbol, NBA y NFL, con cuota, stake y resultado a la vista. Publicamos todo: lo que se da y lo que no.</p>
-    <div class="cta">
-      <a class="btn" href="https://t.me/LaTribunaDelPick">Unirme al canal gratis</a>
-      <a class="btn sec" href="https://t.me/LaTribunadelPick_Bot">Conocer el VIP</a>
-    </div>
+<main id="top">
+<section class="hero" style="border-top:0"><div class="wrap">
+  <div class="eyebrow">Sports Analytics &amp; Research</div>
+  <h1><span class="es">Análisis deportivo con método, datos y resultados a la vista.</span><span class="en">Sports analysis built on data, method and full transparency.</span></h1>
+  <p class="lead"><span class="es">Investigamos fútbol, NBA y NFL cada día y publicamos cada recomendación con su cuota, su nivel de confianza y su resultado, ganado o perdido.</span><span class="en">We research football, NBA and NFL every day and publish each recommendation with its odds, confidence level and outcome, win or lose.</span></p>
+  <div class="cta">
+    <a class="btn" href="https://t.me/LaTribunaDelPick"><span class="es">Unirme al canal gratis</span><span class="en">Join the free channel</span></a>
+    <a class="btn sec" href="#planes"><span class="es">Ver planes VIP</span><span class="en">View VIP plans</span></a>
   </div>
-  <img src="tigre.png" alt="Tigre, mascota de La Tribuna del Pick">
-</div></section>
-
-<section class="alt" id="equipo"><div class="wrap">
-  <h2>Nuestro equipo: las mesas de análisis</h2>
-  <p class="sub">Cada mesa tiene su especialidad y un animal como rostro. Los animales son los personajes de nuestra marca: representan a cada mesa del equipo.</p>
-  <div class="cards">
-    <div class="card"><img src="tigre.png" alt="Tigre"><div class="b"><h3>Mesa de Fútbol</h3><p>Ligas y torneos de fútbol. Sus rostros: Tigre, Caimán, Cóndor y más.</p></div></div>
-    <div class="card"><img src="aguila.png" alt="Águila"><div class="b"><h3>Mesa NBA</h3><p>Baloncesto de la NBA. Rostro: el Águila.</p></div></div>
-    <div class="card"><img src="bisonte.png" alt="Bisonte"><div class="b"><h3>Mesa NFL</h3><p>Fútbol americano. Rostro: el Bisonte.</p></div></div>
-    <div class="card"><img src="jaguar_sonadora.png" alt="Jaguar"><div class="b"><h3>Mesa de Combinadas</h3><p>Combinaciones de picks y la combinada soñadora. Rostro: el Jaguar.</p></div></div>
+  <div class="kpis">
+    <div class="kpi"><b>3</b><span class="es">disciplinas: fútbol, NBA y NFL</span><span class="en">disciplines: football, NBA and NFL</span></div>
+    <div class="kpi"><b>4</b><span class="es">mesas de análisis especializadas</span><span class="en">specialised research desks</span></div>
+    <div class="kpi"><b>1,30+</b><span class="es">cuota mínima en picks sencillos</span><span class="en">minimum odds on single picks</span></div>
+    <div class="kpi"><b>100%</b><span class="es">de los resultados publicados</span><span class="en">of results published</span></div>
   </div>
 </div></section>
 
-<section id="metodo"><div class="wrap">
-  <h2>Cómo trabajamos</h2>
-  <p class="sub">Un proceso simple y repetible, todos los días. No revelamos el detalle de nuestros modelos, pero sí mostramos su desempeño.</p>
+<section id="nosotros"><div class="wrap">
+  <div class="eyebrow"><span class="es">Nosotros</span><span class="en">About us</span></div>
+  <h2><span class="es">Un equipo organizado en mesas de análisis</span><span class="en">A team organised into research desks</span></h2>
+  <p class="sub"><span class="es">La Tribuna del Pick es una marca de análisis deportivo para la comunidad hispanohablante. Cada mesa tiene su especialidad y un personaje como rostro: los animales representan a las mesas, no a personas.</span><span class="en">La Tribuna del Pick is a sports analysis brand for the Spanish-speaking community. Each desk has its own specialty and a character as its face: the animals represent the desks, not individuals.</span></p>
+  <div class="grid4">
+    <div class="desk"><img src="tigre.png" alt=""><div class="b"><span class="tag">Desk 01</span><h3><span class="es">Mesa de Fútbol</span><span class="en">Football Desk</span></h3><p><span class="es">Ligas y torneos de fútbol.</span><span class="en">Leagues and football tournaments.</span></p></div></div>
+    <div class="desk"><img src="aguila.png" alt=""><div class="b"><span class="tag">Desk 02</span><h3><span class="es">Mesa NBA</span><span class="en">NBA Desk</span></h3><p><span class="es">Baloncesto de la NBA.</span><span class="en">NBA basketball.</span></p></div></div>
+    <div class="desk"><img src="bisonte.png" alt=""><div class="b"><span class="tag">Desk 03</span><h3><span class="es">Mesa NFL</span><span class="en">NFL Desk</span></h3><p><span class="es">Fútbol americano.</span><span class="en">American football.</span></p></div></div>
+    <div class="desk"><img src="jaguar_sonadora.png" alt=""><div class="b"><span class="tag">Desk 04</span><h3><span class="es">Mesa de Combinadas</span><span class="en">Parlay Desk</span></h3><p><span class="es">Combinaciones de picks.</span><span class="en">Combined picks (parlays).</span></p></div></div>
+  </div>
+</div></section>
+
+<section class="alt" id="metodologia"><div class="wrap">
+  <div class="eyebrow"><span class="es">Metodología</span><span class="en">Methodology</span></div>
+  <h2><span class="es">Un proceso simple, repetible y documentado</span><span class="en">A simple, repeatable, documented process</span></h2>
+  <p class="sub"><span class="es">No revelamos el detalle de nuestros modelos, pero sí mostramos su desempeño.</span><span class="en">We do not disclose the details of our models, but we do show how they perform.</span></p>
   <div class="steps">
-    <div class="step"><b>Datos.</b> Revisamos partidos, estadísticas recientes, estado de los equipos, contexto y cuotas del mercado.</div>
-    <div class="step"><b>Análisis por mesa.</b> Cada mesa evalúa sus partidos y descarta los que no tienen valor.</div>
-    <div class="step"><b>Filtro de cuota.</b> Solo publicamos picks sencillos con cuota mínima de 1,30.</div>
-    <div class="step"><b>Stake de 1 a 5.</b> Según nuestra confianza. El stake 1 es la unidad base y los demás la multiplican.</div>
-    <div class="step"><b>Publicación escalonada.</b> Tres picks gratis al día (mañana, tarde y noche). El VIP recibe todos, con más anticipación.</div>
-    <div class="step"><b>Cierre y registro.</b> Cada pick se cierra con su resultado y entra al historial. Además, cada semana y cada mes publicamos un balance con el mismo formato.</div>
-  </div>
-  <div class="vals" style="margin-top:36px">
-    <div class="val"><b>Transparencia</b><span>Resultados siempre a la vista.</span></div>
-    <div class="val"><b>Constancia</b><span>Picks todos los días de competencia.</span></div>
-    <div class="val"><b>Comunidad</b><span>La Tribu: gente que disfruta el deporte con cabeza.</span></div>
-    <div class="val"><b>Juego responsable</b><span>Primero el bienestar, luego el pick.</span></div>
+    <div class="step"><div><b><span class="es">Datos.</span><span class="en">Data.</span></b> <span class="es">Partidos, estadísticas recientes, estado de los equipos, contexto y cuotas del mercado.</span><span class="en">Fixtures, recent statistics, team condition, context and market odds.</span></div></div>
+    <div class="step"><div><b><span class="es">Análisis por mesa.</span><span class="en">Desk-level analysis.</span></b> <span class="es">Cada mesa evalúa sus partidos y descarta los que no tienen valor.</span><span class="en">Each desk reviews its fixtures and discards those without value.</span></div></div>
+    <div class="step"><div><b><span class="es">Filtro de cuota.</span><span class="en">Odds filter.</span></b> <span class="es">Solo publicamos picks sencillos con cuota mínima de 1,30.</span><span class="en">Single picks are published only with minimum odds of 1.30.</span></div></div>
+    <div class="step"><div><b><span class="es">Stake de 1 a 5.</span><span class="en">Stake from 1 to 5.</span></b> <span class="es">Nivel de confianza expresado en unidades. El stake 1 es la unidad base y los demás la multiplican.</span><span class="en">Confidence expressed in units. Stake 1 is the base unit and the others are multiples of it.</span></div></div>
+    <div class="step"><div><b><span class="es">Publicación escalonada.</span><span class="en">Staggered publishing.</span></b> <span class="es">Tres picks gratis al día (mañana, tarde y noche). El VIP recibe todos, con más anticipación.</span><span class="en">Three free picks a day (morning, afternoon, night). VIP members get every pick, earlier.</span></div></div>
+    <div class="step"><div><b><span class="es">Cierre y registro.</span><span class="en">Settlement and record.</span></b> <span class="es">Cada pick se cierra con su resultado y entra al historial, sin editar ni borrar.</span><span class="en">Every pick is settled with its outcome and added to the record, without edits or deletions.</span></div></div>
   </div>
 </div></section>
 
-<section class="alt" id="vip"><div class="wrap">
-  <h2>Elige cómo vivir la Tribu</h2>
-  <p class="sub">Empieza gratis. Si te gusta, el VIP te da todo el día de análisis.</p>
-  <div class="planes">
-    <div class="plan"><h3>Canal gratis</h3><ul><li>3 picks al día</li><li>Aviso diario de la jornada</li><li>Balance semanal y mensual</li></ul><a class="btn sec" href="https://t.me/LaTribunaDelPick">Entrar gratis</a></div>
-    <div class="plan vip"><h3>VIP</h3><ul><li>Todos los picks y combinadas del día</li><li>Cuota, stake y resultado de cada uno</li><li>Publicación anticipada</li><li>Soporte en menos de 24 horas</li></ul><ul style="list-style:none;padding:0;margin:14px 0"><li><b>Día</b> · $10.000 COP <span style="color:var(--mut)">(≈ US$3)</span></li><li><b>Semana (8 días)</b> · $50.000 COP <span style="color:var(--mut)">(≈ US$15)</span></li><li><b>Mes (30 días)</b> · $150.000 COP <span style="color:var(--mut)">(≈ US$45)</span></li></ul><p style="color:var(--mut);font-size:.85rem">Referencia en dólares aproximada (1 US$ ≈ 3.300 COP). El cobro se hace en pesos colombianos con Bre-B y el valor exacto en tu moneda depende de la tasa del día. No se renueva solo.</p><a class="btn" href="https://t.me/LaTribunadelPick_Bot">Escribir al bot</a></div>
+<section id="desempeno"><div class="wrap">
+  <div class="eyebrow"><span class="es">Desempeño</span><span class="en">Performance</span></div>
+  <h2><span class="es">Cómo reportamos los resultados</span><span class="en">How we report results</span></h2>
+  <p class="sub"><span class="es">Publicamos un balance semanal y un informe mensual en el canal, siempre con el mismo formato y mostrando lo que se da y lo que no.</span><span class="en">We publish a weekly balance and a monthly report in our channel, always in the same format and showing both wins and losses.</span></p>
+  <table>
+    <tr><th><span class="es">Indicador</span><span class="en">Metric</span></th><th><span class="es">Qué mide</span><span class="en">What it measures</span></th><th><span class="es">Frecuencia</span><span class="en">Frequency</span></th></tr>
+    <tr><td><span class="es">Aciertos</span><span class="en">Hit rate</span></td><td class="m"><span class="es">Picks ganados sobre picks cerrados, por mesa y total.</span><span class="en">Winning picks over settled picks, by desk and overall.</span></td><td class="m"><span class="es">Semanal y mensual</span><span class="en">Weekly and monthly</span></td></tr>
+    <tr><td><span class="es">Balance neto</span><span class="en">Net result</span></td><td class="m"><span class="es">Resultado final en pesos, incluyendo las pérdidas, con 1 unidad = $100.000 COP.</span><span class="en">Final result in pesos, including losses, with 1 unit = COP 100,000.</span></td><td class="m"><span class="es">Semanal y mensual</span><span class="en">Weekly and monthly</span></td></tr>
+    <tr><td><span class="es">Mejor racha</span><span class="en">Best streak</span></td><td class="m"><span class="es">Mayor número de aciertos seguidos en el periodo.</span><span class="en">Longest run of consecutive wins in the period.</span></td><td class="m"><span class="es">Mensual</span><span class="en">Monthly</span></td></tr>
+    <tr><td><span class="es">Resultado por pick</span><span class="en">Per-pick outcome</span></td><td class="m"><span class="es">Cada pick se cierra en el canal con su resultado.</span><span class="en">Each pick is closed in the channel with its outcome.</span></td><td class="m"><span class="es">Al terminar el partido</span><span class="en">At full time</span></td></tr>
+  </table>
+  <p class="note"><span class="es">Rendimientos pasados no garantizan resultados futuros. Los informes se publican en t.me/LaTribunaDelPick.</span><span class="en">Past performance does not guarantee future results. Reports are published at t.me/LaTribunaDelPick.</span></p>
+</div></section>
+
+<section class="alt" id="planes"><div class="wrap">
+  <div class="eyebrow"><span class="es">Planes</span><span class="en">Plans</span></div>
+  <h2><span class="es">Elige tu nivel de acceso</span><span class="en">Choose your access level</span></h2>
+  <p class="sub"><span class="es">Empieza gratis. Si te gusta, el VIP te da todo el día de análisis.</span><span class="en">Start for free. If you like it, VIP gives you the full day of analysis.</span></p>
+  <div class="plans">
+    <div class="plan"><h3><span class="es">Canal gratis</span><span class="en">Free channel</span></h3><ul><li><span class="es">3 picks al día</span><span class="en">3 picks per day</span></li><li><span class="es">Aviso diario de la jornada</span><span class="en">Daily match-day briefing</span></li><li><span class="es">Balance semanal y mensual</span><span class="en">Weekly and monthly reports</span></li></ul><a class="btn sec" href="https://t.me/LaTribunaDelPick"><span class="es">Entrar gratis</span><span class="en">Join for free</span></a></div>
+    <div class="plan feat"><h3>VIP</h3><ul><li><span class="es">Todos los picks y combinadas del día</span><span class="en">All picks and parlays of the day</span></li><li><span class="es">Cuota, stake y resultado de cada uno</span><span class="en">Odds, stake and outcome of each</span></li><li><span class="es">Publicación anticipada</span><span class="en">Early publication</span></li><li><span class="es">Soporte en menos de 24 horas</span><span class="en">Support within 24 hours</span></li></ul>
+      <div class="price"><b><span class="es">Día</span><span class="en">Day</span></b><span>US$3 <i>· $10.000 COP</i></span></div>
+      <div class="price"><b><span class="es">Semana (8 días)</span><span class="en">Week (8 days)</span></b><span>US$15 <i>· $50.000 COP</i></span></div>
+      <div class="price" style="margin-bottom:16px"><b><span class="es">Mes (30 días)</span><span class="en">Month (30 days)</span></b><span>US$45 <i>· $150.000 COP</i></span></div>
+      <a class="btn" href="https://t.me/LaTribunadelPick_Bot"><span class="es">Suscribirme por el bot</span><span class="en">Subscribe via the bot</span></a>
+      <p class="note"><span class="es">Referencia en dólares aproximada (1 US$ ≈ 3.300 COP). El cobro se hace en pesos colombianos con Bre-B y el valor exacto en tu moneda depende de la tasa del día. No se renueva solo.</span><span class="en">Dollar amounts are approximate (US$1 ≈ COP 3,300). Billing is in Colombian pesos via Bre-B and the exact amount in your currency depends on the day's exchange rate. Subscriptions do not renew automatically.</span></p></div>
   </div>
 </div></section>
 
 <section id="faq"><div class="wrap">
-  <h2>Preguntas frecuentes</h2>
-  <details><summary>¿Qué es La Tribuna del Pick?</summary><p>Una comunidad de análisis deportivo con picks diarios de fútbol, NBA y NFL.</p></details>
-  <details><summary>¿Qué es un pick y qué es una combinada?</summary><p>Un pick es una recomendación puntual con su cuota y stake. Una combinada une varios picks en un solo boleto: si se cumplen todos, la cuota se multiplica; si falla uno, se pierde.</p></details>
-  <details><summary>¿Qué es el stake?</summary><p>La cantidad de unidades que sugerimos apostar, de 1 a 5. En nuestros resultados, 1 unidad equivale a $100.000 COP (≈ US$30). Ajusta la unidad a tu propio presupuesto.</p></details>
-  <details><summary>¿Puedo ganar siguiendo a la Tribu?</summary><p>Nuestro objetivo es ayudarte a decidir mejor: análisis con método, stake ordenado y todos los resultados a la vista. Ningún pronóstico es seguro, pero con constancia, disciplina y la información correcta la Tribu va paso a paso. ¡Vamos juntos!</p></details>
-  <details><summary>¿Cómo me suscribo al VIP?</summary><p>Escríbele al bot @LaTribunadelPick_Bot y sigue las instrucciones.</p></details>
-  <details><summary>¿Dónde apuesto?</summary><p>En operadores con licencia vigente en tu país. Revisa que la casa de apuestas esté autorizada por el regulador de tu país. No nos asociamos con sitios no autorizados.</p></details>
+  <div class="eyebrow"><span class="es">Preguntas frecuentes</span><span class="en">FAQ</span></div>
+  <h2><span class="es">Lo que más nos preguntan</span><span class="en">What people ask most</span></h2>
+  <details><summary><span class="es">¿Qué es La Tribuna del Pick?</span><span class="en">What is La Tribuna del Pick?</span></summary><p><span class="es">Una firma de análisis deportivo con picks diarios de fútbol, NBA y NFL, organizada en mesas de análisis.</span><span class="en">A sports analysis brand with daily football, NBA and NFL picks, organised into research desks.</span></p></details>
+  <details><summary><span class="es">¿Qué es un pick y qué es una combinada?</span><span class="en">What is a pick and what is a parlay?</span></summary><p><span class="es">Un pick es una recomendación puntual con su cuota y stake. Una combinada une varios picks en un solo boleto: si se cumplen todos, la cuota se multiplica; si falla uno, se pierde.</span><span class="en">A pick is a single recommendation with its odds and stake. A parlay combines several picks into one ticket: if all hit, the odds multiply; if one fails, the ticket loses.</span></p></details>
+  <details><summary><span class="es">¿Qué es el stake?</span><span class="en">What is the stake?</span></summary><p><span class="es">La cantidad de unidades que sugerimos, de 1 a 5. En nuestros resultados, 1 unidad equivale a $100.000 COP (≈ US$30). Ajusta la unidad a tu propio presupuesto.</span><span class="en">The number of units we suggest, from 1 to 5. In our reports, 1 unit equals COP 100,000 (≈ US$30). Adjust the unit to your own budget.</span></p></details>
+  <details><summary><span class="es">¿Puedo ganar siguiendo a la Tribu?</span><span class="en">Can I win by following the Tribe?</span></summary><p><span class="es">Nuestro objetivo es ayudarte a decidir mejor: análisis con método, stake ordenado y todos los resultados a la vista. Ningún pronóstico es seguro, pero con constancia, disciplina y la información correcta la Tribu va paso a paso. ¡Vamos juntos!</span><span class="en">Our goal is to help you decide better: methodical analysis, orderly staking and every result in plain sight. No forecast is certain, but with consistency, discipline and the right information the Tribe moves step by step. Let's go together!</span></p></details>
+  <details><summary><span class="es">¿Cómo me suscribo al VIP?</span><span class="en">How do I subscribe to VIP?</span></summary><p><span class="es">Escríbele al bot @LaTribunadelPick_Bot y sigue las instrucciones.</span><span class="en">Message the bot @LaTribunadelPick_Bot and follow the instructions.</span></p></details>
+  <details><summary><span class="es">¿Dónde apuesto?</span><span class="en">Where do I place bets?</span></summary><p><span class="es">En operadores con licencia vigente en tu país. Revisa que la casa de apuestas esté autorizada por el regulador de tu país. No nos asociamos con sitios no autorizados.</span><span class="en">With operators licensed in your country. Check that the bookmaker is authorised by your national regulator. We do not partner with unlicensed sites.</span></p></details>
 </div></section>
 
-<section class="alt" id="responsable"><div class="wrap"><div class="resp">
-  <h2>Juego responsable</h2>
-  <p>Esta actividad es solo para <b>mayores de 18 años</b>. Nuestros picks son información y opinión: <b>no garantizamos resultados</b> y no somos casa de apuestas ni recibimos dinero para apostar por ti.</p>
+<section class="alt" id="riesgo"><div class="wrap"><div class="risk">
+  <div class="eyebrow"><span class="es">Aviso de riesgos</span><span class="en">Risk disclosure</span></div>
+  <h2><span class="es">Juego responsable</span><span class="en">Responsible gambling</span></h2>
+  <p><span class="es">Esta actividad es solo para <b>mayores de 18 años</b>. La Tribuna del Pick ofrece información y opinión deportiva: <b>no garantizamos resultados</b>, no somos casa de apuestas, no gestionamos dinero de terceros y no prestamos asesoría financiera ni de inversión.</span><span class="en">This activity is for <b>adults aged 18 and over</b> only. La Tribuna del Pick provides sports information and opinion: <b>we do not guarantee results</b>, we are not a bookmaker, we do not manage third-party money and we do not provide financial or investment advice.</span></p>
   <ul>
-    <li>Apuesta solo dinero que puedas permitirte perder.</li>
-    <li>Define un límite de dinero y de tiempo, y respétalo. Nunca persigas pérdidas.</li>
-    <li>Si el juego se te sale de las manos, pide ayuda a un profesional de salud mental.</li>
-    <li>Rendimientos pasados no garantizan resultados futuros.</li>
+    <li class="es">Apuesta solo dinero que puedas permitirte perder.</li><li class="en">Only wager money you can afford to lose.</li>
+    <li class="es">Define un límite de dinero y de tiempo, y respétalo. Nunca persigas pérdidas.</li><li class="en">Set a limit on money and time, and keep to it. Never chase losses.</li>
+    <li class="es">Si el juego se te sale de las manos, pide ayuda a un profesional de salud mental.</li><li class="en">If gambling stops being fun, seek help from a mental health professional.</li>
+    <li class="es">Rendimientos pasados no garantizan resultados futuros.</li><li class="en">Past performance does not guarantee future results.</li>
   </ul>
 </div></div></section>
 </main>
 
 <footer><div class="wrap">
-  <p><b>La Tribuna del Pick</b> · Análisis deportivo · <a href="https://t.me/LaTribunaDelPick">Canal</a> · <a href="https://t.me/LaTribunadelPick_Bot">Bot de soporte</a></p>
-  <p>+18 · Juega con responsabilidad. Ningún pronóstico es seguro.</p>
+  <p><b>La Tribuna del Pick</b> · Sports Analytics &amp; Research · <a href="https://t.me/LaTribunaDelPick">Telegram</a> · <a href="https://t.me/LaTribunadelPick_Bot"><span class="es">Soporte</span><span class="en">Support</span></a></p>
+  <p><span class="es">+18 · Juega con responsabilidad. Ningún pronóstico es seguro. Contenido informativo, no asesoría financiera.</span><span class="en">18+ · Play responsibly. No forecast is certain. Informational content, not financial advice.</span></p>
 </div></footer>
+
+<script>
+(function(){
+  var b=document.body, es=document.getElementById('bes'), en=document.getElementById('ben');
+  function set(l){
+    b.classList.toggle('en', l==='en'); document.documentElement.lang=l;
+    es.classList.toggle('on', l!=='en'); en.classList.toggle('on', l==='en');
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  es.onclick=function(){set('es')}; en.onclick=function(){set('en')};
+  var s=null; try{s=localStorage.getItem('lang')}catch(e){}
+  if(!s){ s=((navigator.language||'es').toLowerCase().indexOf('es')===0)?'es':'en'; }
+  set(s);
+})();
+</script>
 </body>
 </html>
