@@ -10,7 +10,7 @@
                       "cuota":  "1.25",
                       "stake":  "2",
                       "prob":  "75",
-                      "estado":  "abierto"
+                      "estado":  "ganado"
                   },
                   {
                       "hora":  "5:00 pm",
@@ -21,7 +21,7 @@
                       "cuota":  "1.40",
                       "stake":  "2",
                       "prob":  "66",
-                      "estado":  "abierto"
+                      "estado":  "ganado"
                   },
                   {
                       "hora":  "6:00 pm",
@@ -32,7 +32,7 @@
                       "cuota":  "1.36",
                       "stake":  "2",
                       "prob":  "68",
-                      "estado":  "abierto"
+                      "estado":  "ganado"
                   }
               ]
 }
