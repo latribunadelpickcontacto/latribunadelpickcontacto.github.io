@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -134,7 +134,7 @@
 </head>
 <body>
 <header><div class="wrap nav">
-  <a class="brand" href="#top"><img src="logo.png" alt="La Tribuna del Pick"><span><b>La Tribuna del Pick</b><small>Sports Analytics &amp; Research</small></span></a>
+  <a class="brand" href="#top"><img src="img/logo.png" alt="La Tribuna del Pick"><span><b>La Tribuna del Pick</b><small>Sports Analytics &amp; Research</small></span></a>
   <nav>
     <a class="h es" href="#nosotros">Nosotros</a><a class="h es" href="#metodologia">Metodología</a><a class="h es" href="#desempeno">Desempeño</a><a class="h es" href="#planes">Planes</a><a class="h es" href="#compromiso">Compromiso</a>
     <a class="h en" href="#nosotros">About</a><a class="h en" href="#metodologia">Methodology</a><a class="h en" href="#desempeno">Performance</a><a class="h en" href="#planes">Plans</a><a class="h en" href="#compromiso">Commitment</a>
@@ -166,10 +166,10 @@
   <h2><span class="es">Un equipo organizado en mesas de análisis</span><span class="en">A team organised into research desks</span></h2>
   <p class="sub"><span class="es">La Tribuna del Pick es una marca de análisis deportivo para la comunidad hispanohablante. Cada mesa tiene su especialidad y un personaje como rostro: los animales representan a las mesas, no a personas.</span><span class="en">La Tribuna del Pick is a sports analysis brand for the Spanish-speaking community. Each desk has its own specialty and a character as its face: the animals represent the desks, not individuals.</span></p>
   <div class="grid4">
-    <div class="desk"><img src="tigre.png" alt="Tigre, rostro de la Mesa de Fútbol / Football Desk"><div class="b"><span class="tag">Desk 01</span><h3><span class="es">Mesa de Fútbol</span><span class="en">Football Desk</span></h3><p><span class="es">Ligas y torneos de fútbol.</span><span class="en">Leagues and football tournaments.</span></p></div></div>
-    <div class="desk"><img src="aguila.png" alt="Águila, rostro de la Mesa NBA / NBA Desk"><div class="b"><span class="tag">Desk 02</span><h3><span class="es">Mesa NBA</span><span class="en">NBA Desk</span></h3><p><span class="es">Baloncesto de la NBA.</span><span class="en">NBA basketball.</span></p></div></div>
-    <div class="desk"><img src="bisonte.png" alt="Bisonte, rostro de la Mesa NFL / NFL Desk"><div class="b"><span class="tag">Desk 03</span><h3><span class="es">Mesa NFL</span><span class="en">NFL Desk</span></h3><p><span class="es">Fútbol americano.</span><span class="en">American football.</span></p></div></div>
-    <div class="desk"><img src="jaguar_sonadora.png" alt="Jaguar, rostro de la Mesa de Combinadas / Parlay Desk"><div class="b"><span class="tag">Desk 04</span><h3><span class="es">Mesa de Combinadas</span><span class="en">Parlay Desk</span></h3><p><span class="es">Combinaciones de picks.</span><span class="en">Combined picks (parlays).</span></p></div></div>
+    <div class="desk"><img src="img/tigre.png" alt="Tigre, rostro de la Mesa de Fútbol / Football Desk"><div class="b"><span class="tag">Desk 01</span><h3><span class="es">Mesa de Fútbol</span><span class="en">Football Desk</span></h3><p><span class="es">Ligas y torneos de fútbol.</span><span class="en">Leagues and football tournaments.</span></p></div></div>
+    <div class="desk"><img src="img/aguila.png" alt="Águila, rostro de la Mesa NBA / NBA Desk"><div class="b"><span class="tag">Desk 02</span><h3><span class="es">Mesa NBA</span><span class="en">NBA Desk</span></h3><p><span class="es">Baloncesto de la NBA.</span><span class="en">NBA basketball.</span></p></div></div>
+    <div class="desk"><img src="img/bisonte.png" alt="Bisonte, rostro de la Mesa NFL / NFL Desk"><div class="b"><span class="tag">Desk 03</span><h3><span class="es">Mesa NFL</span><span class="en">NFL Desk</span></h3><p><span class="es">Fútbol americano.</span><span class="en">American football.</span></p></div></div>
+    <div class="desk"><img src="img/jaguar_sonadora.png" alt="Jaguar, rostro de la Mesa de Combinadas / Parlay Desk"><div class="b"><span class="tag">Desk 04</span><h3><span class="es">Mesa de Combinadas</span><span class="en">Parlay Desk</span></h3><p><span class="es">Combinaciones de picks.</span><span class="en">Combined picks (parlays).</span></p></div></div>
   </div>
 </div></section>
 
@@ -357,6 +357,18 @@
   }catch(e){}
 })();
 </script>
+<script>
+/* Contador de visitas anonimo (sin cookies ni datos personales): una visita por sesion, total y por dia. */
+(function(){
+  try{
+    if(location.search.indexOf("x=1")>-1){localStorage.setItem("sinconteo","1")}
+    if(localStorage.getItem("sinconteo")||sessionStorage.getItem("contada"))return;
+    sessionStorage.setItem("contada","1");
+    var d=new Date(),k="d"+d.getFullYear()+("0"+(d.getMonth()+1)).slice(-2)+("0"+d.getDate()).slice(-2);
+    var b="https://abacus.jasoncameron.dev/hit/latribunadelpick-web/";
+    fetch(b+"visitas");fetch(b+k);
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
-
