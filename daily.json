@@ -1,0 +1,38 @@
+{
+    "fecha":  "12/11",
+    "picks":  [
+                  {
+                      "hora":  "2:45 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Europa - UEFA Nations League",
+                      "partido":  "Montenegro – Letonia",
+                      "pick":  "Más de 1,5 goles",
+                      "cuota":  "1.25",
+                      "stake":  "2",
+                      "prob":  "75",
+                      "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "5:00 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Brasil - Serie B",
+                      "partido":  "Ponte Preta – Operário-PR",
+                      "pick":  "Menos de 3,5 goles",
+                      "cuota":  "1.40",
+                      "stake":  "2",
+                      "prob":  "66",
+                      "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "6:00 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Uruguay - Liga AUF",
+                      "partido":  "Cerro Largo – Progreso",
+                      "pick":  "Más de 1,5 goles",
+                      "cuota":  "1.36",
+                      "stake":  "2",
+                      "prob":  "68",
+                      "estado":  "abierto"
+                  }
+              ]
+}
