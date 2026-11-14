@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo llevar tu propio registro de picks paso a paso · La Tribuna del Pick</title>
+<meta name="description" content="Un registro sencillo de tus apuestas te ayuda a ver la realidad con datos. Qué columnas usar y cómo revisarlo cada semana.">
+<link rel="canonical" href="https://latribunadelpick.com/aprende/como-llevar-tu-propio-registro/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0B0C0E">
+<link rel="icon" type="image/png" href="/logo.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="La Tribuna del Pick">
+<meta property="og:locale" content="es_CO">
+<meta property="og:url" content="https://latribunadelpick.com/aprende/como-llevar-tu-propio-registro/">
+<meta property="og:title" content="Cómo llevar tu propio registro de picks paso a paso">
+<meta property="og:description" content="Un registro sencillo de tus apuestas te ayuda a ver la realidad con datos. Qué columnas usar y cómo revisarlo cada semana.">
+<meta property="og:image" content="https://latribunadelpick.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"Cómo llevar tu propio registro de picks paso a paso","description":"Un registro sencillo de tus apuestas te ayuda a ver la realidad con datos. Qué columnas usar y cómo revisarlo cada semana.","inLanguage":"es","datePublished":"2026-11-14","dateModified":"2026-11-14","mainEntityOfPage":"https://latribunadelpick.com/aprende/como-llevar-tu-propio-registro/","image":"https://latribunadelpick.com/og-image.png","author":{"@id":"https://latribunadelpick.com/#org"},"publisher":{"@id":"https://latribunadelpick.com/#org"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://latribunadelpick.com/"},{"@type":"ListItem","position":2,"name":"Aprende","item":"https://latribunadelpick.com/aprende/"},{"@type":"ListItem","position":3,"name":"Cómo llevar tu propio registro de picks paso a paso","item":"https://latribunadelpick.com/aprende/como-llevar-tu-propio-registro/"}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0C0E; --bg2:#101215; --panel:#141619; --line:rgba(212,175,55,.16);
+    --acc:#C5A059; --acc2:#E5C77B; --txt:#F8F9FA; --mut:#9CA3AF; --ok:#4cc38a;
+    --serif:"Playfair Display",Georgia,"Times New Roman",serif; --sans:Inter,"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--acc2)} img{max-width:100%;display:block}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  /* idioma */
+  /* fondo con las 4 mascotas: muy tenue, fijo al hacer scroll, no tapa ni bloquea nada */
+  body::after{content:"";position:fixed;inset:76px 0 0 0;z-index:5;pointer-events:none;background:url("/fondo_tribu.jpg") center center/contain no-repeat;opacity:.13;mix-blend-mode:screen}
+  @media (max-width:700px){body::after{background-size:100% auto;opacity:.16}}
+  body.en .es{display:none!important} body:not(.en) .en{display:none!important}
+  /* enlaces a las redes: encabezado (iconos), inicio (botones) y pie */
+  .soc{display:inline-flex;gap:6px;align-items:center}
+  .soc a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid var(--line);border-radius:8px;color:var(--mut)} .soc a:hover{color:var(--acc2);border-color:var(--acc)}
+  @media(max-width:600px){header .soc{display:none}}
+  .follow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:18px}
+  .follow>span{color:var(--mut);font-size:.85rem;margin-right:2px}
+  .follow a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--txt);text-decoration:none;font-size:.88rem;font-weight:500;background:rgba(255,255,255,.02)} .follow a:hover{border-color:var(--acc);color:var(--acc2)}
+  footer .fsoc{display:flex;flex-wrap:wrap;gap:10px 18px;margin:6px 0 4px} footer .fsoc a{display:inline-flex;align-items:center;gap:7px}  .agrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:22px}
+  .acard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;text-decoration:none;color:var(--txt)} .acard:hover{border-color:var(--acc)}
+  .acard b{display:block;font-family:var(--serif);font-size:1.12rem;margin-bottom:6px} .acard span{color:var(--mut);font-size:.92rem}
+  /* header */
+  header{position:sticky;top:0;z-index:10;background:rgba(11,12,14,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--txt)}
+  .brand img{width:40px;height:40px;border-radius:8px;border:1px solid var(--line)}
+  .brand b{font-family:var(--serif);font-size:1.12rem;letter-spacing:.2px;display:block;line-height:1.1}
+  .brand small{display:block;color:var(--mut);font-size:.7rem;letter-spacing:1.6px;text-transform:uppercase}
+  nav{display:flex;align-items:center;gap:20px}
+  nav a{color:var(--mut);text-decoration:none;font-size:.9rem} nav a:hover{color:var(--txt)}
+  .lang{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .lang button{background:transparent;color:var(--mut);border:0;padding:6px 11px;font:600 .78rem var(--sans);cursor:pointer}
+  .lang button.on{background:var(--acc);color:#0B0C0E}
+  .btn{display:inline-block;background:linear-gradient(180deg,#E5C77B,#C5A059);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 18px rgba(197,160,89,.18);color:#0B0C0E;font-weight:600;text-decoration:none;padding:12px 22px;border-radius:8px;border:1px solid var(--acc);font-size:.95rem}
+  .btn:hover{filter:brightness(1.07)} .btn.sec{background:transparent;color:var(--txt);border-color:var(--line)} .btn.sec:hover{border-color:var(--acc)}
+  /* hero */
+  .hero{padding:78px 0 56px;background:radial-gradient(1000px 420px at 85% -10%,rgba(197,160,89,.07),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2))}
+  .eyebrow{color:var(--acc2);font-size:.82rem;letter-spacing:2.2px;text-transform:uppercase;font-weight:600}
+  h1{font-family:var(--serif);font-size:clamp(2.1rem,4.8vw,3.4rem);line-height:1.12;margin:12px 0 18px;max-width:780px;font-weight:700}
+  .lead{color:var(--mut);font-size:1.12rem;max-width:660px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:48px}
+  .kpi{background:var(--panel);padding:20px 22px} .kpi b{display:block;font-family:var(--serif);font-size:1.9rem;color:var(--acc2);line-height:1.1}
+  .kpi span{color:var(--mut);font-size:.88rem}
+  /* secciones */
+  section{padding:84px 0;border-top:1px solid var(--line)} section.alt{background:var(--bg2)}
+  h2{font-family:var(--serif);font-size:1.9rem;margin:6px 0 10px;font-weight:700}
+  p.sub{color:var(--mut);max-width:700px;margin:0 0 32px}
+  .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .desk{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .desk img{height:280px;width:100%;border-radius:0;object-fit:cover;object-position:top;margin:0;border:0;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+  .badge{display:inline-block;border:1px solid var(--acc);color:var(--acc2);font-size:.72rem;letter-spacing:2px;font-weight:600;padding:3px 10px;border-radius:999px;margin-bottom:12px}
+  .kpi b,.price,table,.step::before{font-variant-numeric:tabular-nums}
+  .lnk{color:var(--txt);text-decoration:none;padding:12px 6px;border-bottom:1px solid var(--acc);font-size:.95rem}.lnk:hover{color:var(--acc2)}
+  .desk .b{padding:0 20px 22px;margin-top:-34px;position:relative} .desk h3{margin:0 0 4px;font-family:var(--serif);font-size:1.1rem} .desk p{margin:0;color:var(--mut);font-size:.92rem}
+  .desk>.b:first-child{margin-top:0;padding-top:20px}   /* tarjetas sin imagen: el titulo no se esconde */
+  .tag{display:inline-block;color:var(--acc2);font-size:.78rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+  .step{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 22px}
+  .step::before{counter-increment:s;content:counter(s,decimal-leading-zero);display:block;font-family:var(--serif);font-size:2.8rem;line-height:1;margin-bottom:12px;background:linear-gradient(180deg,#E5C77B,#8a6d33);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .step b{color:var(--txt)} .step span{color:var(--mut)} .step b span{color:var(--txt)}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:.95rem}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line)} th{color:var(--acc2);font-size:.75rem;letter-spacing:1.4px;text-transform:uppercase;background:#0F1114}
+  tr:last-child td{border-bottom:0} td.m{color:var(--mut)}
+  .note{color:var(--mut);font-size:.9rem;margin-top:12px}
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .plan{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px}
+  .plan.feat{border-color:var(--acc)} .plan h3{font-family:var(--serif);margin:0 0 10px;font-size:1.3rem}
+  .plan ul{padding-left:18px;color:var(--mut);margin:0 0 18px} .plan li{margin:6px 0}
+  .price{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:8px 0}
+  .price b{color:var(--txt)} .price span{color:var(--mut)} .price b span{color:var(--txt)} .price i{font-style:normal;color:var(--acc2)}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}
+  summary{cursor:pointer;font-weight:600} details p{color:var(--mut);margin:10px 0 0}
+  .risk{background:#0F1114;border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:10px;padding:24px 26px}
+  .risk h2{margin-top:0} .risk ul{color:var(--mut);padding-left:20px} .risk p{color:var(--mut)}
+  footer{padding:32px 0 56px;border-top:1px solid var(--line);color:var(--mut);font-size:.9rem}
+  footer a{color:var(--mut)}
+  .hgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+  .hr{position:relative}
+  .hr img{width:100%;max-height:440px;object-fit:cover;object-position:top;border-radius:18px;border:1px solid rgba(212,175,55,.32);-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+  .float{position:absolute;left:14px;bottom:14px;background:rgba(20,22,25,.82);backdrop-filter:blur(8px);border:1px solid rgba(212,175,55,.32);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:12px;font-size:.9rem}
+  .float b{font-family:var(--serif);font-size:2rem;color:var(--acc2);line-height:1}
+  .desk,.plan,.step,.kpi{border-top-color:rgba(212,175,55,.34)}
+  .pickcard{background:linear-gradient(180deg,#171a1e,#121417);border:1px solid rgba(212,175,55,.34);border-radius:16px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  .pc-match{font-family:var(--serif);font-size:1.6rem;font-weight:700;margin:10px 0 2px;line-height:1.2}
+  .pc-sub{color:var(--mut);font-size:.9rem}
+  .pc-pick{margin:18px 0;padding:14px 16px;border:1px solid var(--line);border-radius:10px;font-size:1.15rem;font-weight:600;background:rgba(255,255,255,.02)}
+  .pc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .pc-grid div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .pc-grid small{display:block;color:var(--mut);font-size:.72rem;letter-spacing:1.4px}
+  .pc-grid b{font-family:var(--serif);font-size:1.7rem;color:var(--acc2);font-variant-numeric:tabular-nums}
+  .pc-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .pc-state{font-size:.72rem;letter-spacing:1.2px;font-weight:700;padding:3px 9px;border-radius:999px;display:none}
+  .pc-state.ok{display:inline-block;color:#0B0C0E;background:#4cc38a}.pc-state.no{display:inline-block;color:#F8F9FA;background:#7a3b3b}.pc-state.nu{display:inline-block;color:#0B0C0E;background:#9CA3AF}
+  .pc-dots{display:flex;gap:8px;margin-top:14px}.pc-dots button{width:26px;height:6px;border-radius:4px;border:0;background:rgba(212,175,55,.25);cursor:pointer;padding:0}.pc-dots button.on{background:var(--acc)}
+  .pc-foot{margin-top:16px;color:var(--mut);font-size:.85rem}
+  .nextrep{margin-top:22px;border:1px dashed rgba(212,175,55,.4);border-radius:12px;padding:18px 20px;display:flex;gap:16px;align-items:center}
+  .nextrep b{font-family:var(--serif);font-size:1.6rem;color:var(--acc2);line-height:1}
+  .st-tabs{display:flex;gap:8px;margin:6px 0 16px;flex-wrap:wrap}
+  .st-tabs button{background:transparent;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font:600 .85rem var(--sans);cursor:pointer}
+  .st-tabs button.on{background:var(--acc);color:#0B0C0E;border-color:var(--acc)}
+  .st-chart{display:flex;align-items:flex-end;gap:6px;height:170px;padding:14px 12px 28px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:16px;overflow-x:auto;position:relative}
+  .st-chart .bar{flex:0 0 28px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+  .st-chart .bar i{display:block;width:100%;border-radius:4px 4px 0 0;min-height:2px}
+  .st-chart .bar i.pos{background:linear-gradient(180deg,#E5C77B,#C5A059)}
+  .st-chart .bar i.neg{background:#8f4a4a;border-radius:0 0 4px 4px}
+  .st-chart .bar span{position:absolute;bottom:-22px;font-size:.62rem;color:var(--mut);white-space:nowrap}
+  #stTable td.pos{color:#4cc38a} #stTable td.neg{color:#e07a7a} #stTable td,#stTable th{white-space:nowrap}
+  .tblwrap{overflow-x:auto}
+  @media(max-width:820px){.hgrid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.hr{max-width:380px}nav a.h{display:none}.hero{padding:52px 0 40px}}
+
+  .art{max-width:760px;margin:0 auto;padding:48px 22px 70px;position:relative;z-index:6}
+  .art h1{font-size:clamp(1.8rem,4.2vw,2.6rem);margin:8px 0 10px;max-width:none}
+  .art h2{font-size:1.45rem;margin:34px 0 8px}
+  .art p{color:#d4d8de;margin:0 0 14px;font-size:1.02rem}
+  .meta{color:var(--mut);font-size:.88rem;margin:0 0 22px}
+  .box{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:10px;padding:18px 22px;margin:30px 0}
+  .box h3{margin:0 0 8px;font-family:var(--serif);font-size:1.15rem} .box ul{margin:0;padding-left:20px;color:#d4d8de} .box li{margin:5px 0}
+  .cta{background:linear-gradient(180deg,rgba(212,175,55,.10),rgba(212,175,55,.03));border:1px solid var(--line);border-radius:12px;padding:22px;margin:34px 0;text-align:center}
+  .cta p{color:var(--txt);margin:0 0 14px}
+  .rel{display:grid;gap:10px;margin:8px 0 0;padding:0;list-style:none} .rel a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px;text-decoration:none;color:var(--txt)} .rel a:hover{border-color:var(--acc)}
+  .crumbs{font-size:.85rem;color:var(--mut);margin-bottom:6px} .crumbs a{color:var(--mut)}
+  .legal{color:var(--mut);font-size:.82rem;margin-top:26px}
+  .agrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:22px}
+  .acard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;text-decoration:none;color:var(--txt)} .acard:hover{border-color:var(--acc)}
+  .acard b{display:block;font-family:var(--serif);font-size:1.12rem;margin-bottom:6px} .acard span{color:var(--mut);font-size:.92rem}
+  header nav{gap:16px} header nav a.tg{background:linear-gradient(180deg,#E5C77B,#C5A059);color:#0B0C0E;font-weight:600;padding:7px 14px;border-radius:8px}</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="/"><img src="/logo.png" alt="La Tribuna del Pick"><span><b>La Tribuna del Pick</b><small>Sports Analytics &amp; Research</small></span></a><nav><a href="/">Inicio</a><a href="/aprende/">Aprende</a><a class="tg" href="https://t.me/+s6LyildTt8Y1NjJh">Telegram</a></nav></div></header>
+<main>
+<article class="art"><div class="crumbs"><a href="/">Inicio</a> › <a href="/aprende/">Aprende</a></div><div class="eyebrow">Guía</div><h1>Cómo llevar tu propio registro de picks paso a paso</h1><p class="meta">Lectura de 2 min · Actualizado el 2026-11-14</p><h2>Por qué conviene registrar</h2><p>La memoria recuerda los aciertos y olvida las pérdidas. Un registro corrige eso y te muestra tu resultado real.</p>
+<h2>Las columnas básicas</h2><p>Fecha, partido, pick, cuota, stake, resultado (ganado, perdido o anulado) y neto en pesos. Con eso ya puedes calcular tu acierto y tu balance.</p><p>Si quieres más detalle, añade la competición y el tipo de pick: sencillo o combinada.</p>
+<h2>Cómo revisarlo</h2><p>Cada semana suma los picks, cuenta los aciertos y calcula el balance. Cada mes compara contra el mes anterior.</p><p>Si algo no te gusta, cambia una sola variable a la vez, como el stake o el tipo de pick, y observa el efecto durante varias semanas.</p>
+<h2>Una regla útil</h2><p>Registra siempre antes del partido, no después. Así evitas justificar decisiones a posteriori.</p><div class="box"><h3>En 3 puntos</h3><ul><li>Registra cada pick con cuota, stake y resultado.</li><li>Revisa semanal y mensualmente.</li><li>Cambia una variable a la vez.</li></ul></div><div class="cta"><p><b>¿Quieres ver estas ideas aplicadas cada día?</b><br>3 picks gratis al día en Telegram, con cuota, stake y resultado.</p><a class="btn" href="https://t.me/+s6LyildTt8Y1NjJh">Unirme al canal gratis en Telegram</a></div><h2>Sigue aprendiendo</h2><ul class="rel"><li><a href="/aprende/que-es-el-stake/">Qué es el stake y cómo lo usamos en La Tribuna del Pick</a></li><li><a href="/aprende/como-leer-una-cuota/">Cómo leer una cuota decimal y qué dice de la probabilidad</a></li><li><a href="/aprende/que-es-una-combinada/">Qué es una combinada y por qué es más difícil de lo que parece</a></li></ul><p class="legal">Contenido informativo, no es asesoría financiera. Ningún pronóstico es seguro. +18 · Juega con responsabilidad.</p></article>
+</main>
+<footer><div class="wrap"><p><b>La Tribuna del Pick</b> · Sports Analytics &amp; Research</p><div class="fsoc"><a href="https://t.me/+s6LyildTt8Y1NjJh">Telegram</a><a href="https://www.facebook.com/latribunadelpick">Facebook</a><a href="https://www.instagram.com/latribunadelpick/">Instagram</a></div><p>+18 · Juega con responsabilidad. Ningún pronóstico es seguro. Contenido informativo, no asesoría financiera.</p></div></footer>
+</body>
+</html>
