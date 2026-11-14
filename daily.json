@@ -11,6 +11,17 @@
                       "stake":  "2",
                       "prob":  "72",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "2:30 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Brasil - Serie B",
+                      "partido":  "América Mineiro – Avaí",
+                      "pick":  "Menos de 3,5 goles",
+                      "cuota":  "1.30",
+                      "stake":  "3",
+                      "prob":  "72",
+                      "estado":  "abierto"
                   }
               ]
 }
