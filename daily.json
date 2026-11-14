@@ -1,38 +1,16 @@
 {
-    "fecha":  "13/11",
+    "fecha":  "14/11",
     "picks":  [
                   {
-                      "hora":  "2:45 pm",
+                      "hora":  "10:15 am",
                       "deporte":  "Fútbol",
-                      "liga":  "Europa - UEFA Nations League",
-                      "partido":  "Países Bajos – Grecia",
-                      "pick":  "Menos de 3,5 goles",
-                      "cuota":  "1.50",
-                      "stake":  "1",
-                      "prob":  "62",
-                      "estado":  "perdido"
-                  },
-                  {
-                      "hora":  "2:45 pm",
-                      "deporte":  "Fútbol",
-                      "liga":  "Europa - UEFA Nations League",
-                      "partido":  "Bulgaria – Islandia",
+                      "liga":  "España - Segunda División",
+                      "partido":  "Real Sociedad B – Sporting Gijón",
                       "pick":  "Más de 1,5 goles",
-                      "cuota":  "1.33",
+                      "cuota":  "1.30",
                       "stake":  "2",
-                      "prob":  "71",
-                      "estado":  "ganado"
-                  },
-                  {
-                      "hora":  "3:00 pm",
-                      "deporte":  "Fútbol",
-                      "liga":  "Uruguay - Liga AUF",
-                      "partido":  "Torque – Racing",
-                      "pick":  "Menos de 3,5 goles",
-                      "cuota":  "1.33",
-                      "stake":  "2",
-                      "prob":  "70",
-                      "estado":  "perdido"
+                      "prob":  "72",
+                      "estado":  "abierto"
                   }
               ]
 }
