@@ -52,7 +52,10 @@
   .follow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:18px}
   .follow>span{color:var(--mut);font-size:.85rem;margin-right:2px}
   .follow a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--txt);text-decoration:none;font-size:.88rem;font-weight:500;background:rgba(255,255,255,.02)} .follow a:hover{border-color:var(--acc);color:var(--acc2)}
-  footer .fsoc{display:flex;flex-wrap:wrap;gap:10px 18px;margin:6px 0 4px} footer .fsoc a{display:inline-flex;align-items:center;gap:7px}  /* header */
+  footer .fsoc{display:flex;flex-wrap:wrap;gap:10px 18px;margin:6px 0 4px} footer .fsoc a{display:inline-flex;align-items:center;gap:7px}  .agrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:22px}
+  .acard{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;text-decoration:none;color:var(--txt)} .acard:hover{border-color:var(--acc)}
+  .acard b{display:block;font-family:var(--serif);font-size:1.12rem;margin-bottom:6px} .acard span{color:var(--mut);font-size:.92rem}
+  /* header */
   header{position:sticky;top:0;z-index:10;background:rgba(11,12,14,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--txt)}
@@ -147,8 +150,8 @@
 <header><div class="wrap nav">
   <a class="brand" href="#top"><img src="logo.png" alt="La Tribuna del Pick"><span><b>La Tribuna del Pick</b><small>Sports Analytics &amp; Research</small></span></a>
   <nav>
-    <a class="h es" href="#nosotros">Nosotros</a><a class="h es" href="#metodologia">Metodología</a><a class="h es" href="#desempeno">Desempeño</a><a class="h es" href="#planes">Planes</a><a class="h es" href="#compromiso">Compromiso</a>
-    <a class="h en" href="#nosotros">About</a><a class="h en" href="#metodologia">Methodology</a><a class="h en" href="#desempeno">Performance</a><a class="h en" href="#planes">Plans</a><a class="h en" href="#compromiso">Commitment</a>
+    <a class="h es" href="#nosotros">Nosotros</a><a class="h es" href="#metodologia">Metodología</a><a class="h es" href="#desempeno">Desempeño</a><a class="h es" href="#planes">Planes</a><a class="h es" href="#compromiso">Compromiso</a><a class="h es" href="/aprende/">Aprende</a>
+    <a class="h en" href="#nosotros">About</a><a class="h en" href="#metodologia">Methodology</a><a class="h en" href="#desempeno">Performance</a><a class="h en" href="#planes">Plans</a><a class="h en" href="#compromiso">Commitment</a><a class="h en" href="/aprende/">Learn</a>
     <span class="soc"><a href="https://t.me/LaTribunaDelPick" aria-label="Telegram" title="Telegram"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.3-1.7.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.4-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.6 13.2 1.9 11.7c-1-.3-1-1 .2-1.5L20.5 3.1c.9-.3 1.6.2 1.4 1.2z"/></svg></a><a href="https://www.facebook.com/latribunadelpick" aria-label="Facebook" title="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"/></svg></a><a href="https://www.instagram.com/latribunadelpick/" aria-label="Instagram" title="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r="1" fill="currentColor" stroke="none"/></svg></a></span>
     <span class="lang"><button id="bes" class="on" type="button">ES</button><button id="ben" type="button">EN</button></span>
   </nav>
@@ -277,6 +280,16 @@
       <p class="en">If gambling stops being fun, talk to someone you trust or a mental health professional. Asking for help takes courage.</p></div></div>
   </div>
 </div></div></section>
+<!--APRENDE:ini-->
+<section id="aprende"><div class="wrap"><div class="eyebrow"><span class="es">Aprende</span><span class="en">Learn</span></div><h2><span class="es">Guías para entender el análisis deportivo</span><span class="en">Guides to understand sports analysis</span></h2><p class="sub"><span class="es">Cuotas, stake, combinadas, varianza y juego responsable, explicados de forma simple.</span><span class="en">Odds, staking, parlays, variance and responsible play, explained simply.</span></p><div class="agrid"><a class="acard" href="/aprende/que-es-el-stake/"><b>Qué es el stake y cómo lo usamos en La Tribuna del Pick</b><span>Explicación simple del stake: cuánto de tu presupuesto se asigna a cada pick, cómo lo leemos en una escala de 1 a 5 y por qué no es lo mismo que la cuota.</span></a>
+<a class="acard" href="/aprende/como-leer-una-cuota/"><b>Cómo leer una cuota decimal y qué dice de la probabilidad</b><span>Aprende a leer una cuota decimal, calcular el retorno y entender la probabilidad que implica, con ejemplos sencillos.</span></a>
+<a class="acard" href="/aprende/que-es-una-combinada/"><b>Qué es una combinada y por qué es más difícil de lo que parece</b><span>Cómo se calcula una combinada, por qué sus cuotas se multiplican y por qué acertar todas las patas es más difícil que acertar una sola.</span></a>
+<a class="acard" href="/aprende/por-que-publicamos-las-perdidas/"><b>Por qué publicamos también los picks perdidos</b><span>La transparencia es parte del método: mostramos todos los resultados, también los que no se dan, y explicamos por qué importa.</span></a>
+<a class="acard" href="/aprende/varianza-rachas-y-metodo/"><b>Varianza: por qué una mala racha no invalida un método</b><span>La varianza explica por qué hay rachas buenas y malas incluso con un método sólido. Cómo prepararte para ellas.</span></a>
+<a class="acard" href="/aprende/como-llevar-tu-propio-registro/"><b>Cómo llevar tu propio registro de picks paso a paso</b><span>Un registro sencillo de tus apuestas te ayuda a ver la realidad con datos. Qué columnas usar y cómo revisarlo cada semana.</span></a>
+<a class="acard" href="/aprende/guia-de-mercados/"><b>Guía de mercados: más o menos goles, ambos anotan, ganador y más</b><span>Los mercados más comunes en fútbol, NBA y NFL explicados de forma simple, con ejemplos y errores típicos.</span></a>
+<a class="acard" href="/aprende/juego-responsable/"><b>Juego responsable: límites, señales de alerta y cuándo parar</b><span>Cómo disfrutar del análisis deportivo con cabeza: presupuesto, límites de tiempo, señales de alerta y a quién acudir si necesitas ayuda.</span></a></div><p style="margin-top:22px"><a class="btn sec" href="/aprende/"><span class="es">Ver todas las guías</span><span class="en">See all guides</span></a></p></div></section>
+<!--APRENDE:fin-->
 </main>
 
 <footer><div class="wrap">
