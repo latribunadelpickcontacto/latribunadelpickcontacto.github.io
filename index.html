@@ -195,6 +195,7 @@
     <div class="kpis" style="margin:0 0 20px">
       <div class="kpi"><b id="kA">–</b><span class="es">acierto en picks</span><span class="en">pick hit rate</span></div>
       <div class="kpi"><b id="kB">–</b><span class="es">acierto en combinadas</span><span class="en">parlay hit rate</span></div>
+      <div class="kpi"><b id="kS">–</b><span class="es">soñadoras (aparte)</span><span class="en">dream parlays (separate)</span></div>
       <div class="kpi"><b id="kC">–</b><span class="es">balance neto acumulado</span><span class="en">cumulative net result</span></div>
       <div class="kpi"><b id="kD">–</b><span class="es">días registrados</span><span class="en">days recorded</span></div>
     </div>
@@ -337,16 +338,17 @@
     var rows=(ST[view]||[]).slice(), tot=ST.total;
     document.getElementById("kA").textContent=pct(tot.pg,tot.pn)+" ("+tot.pg+"/"+tot.pn+")";
     document.getElementById("kB").textContent=pct(tot.cg,tot.cn)+" ("+tot.cg+"/"+tot.cn+")";
+    document.getElementById("kS").textContent=(tot.sn?tot.sg+"/"+tot.sn+" · "+money(tot.netoS||0):"–");
     document.getElementById("kC").textContent=money(tot.neto);
     document.getElementById("kD").textContent=(ST.dias||[]).length;
     var last=rows.slice(-14), mx=Math.max.apply(null,last.map(function(r){return Math.abs(r.neto)}).concat([1]));
     var ch=document.getElementById("stChart"); ch.innerHTML="";
     last.forEach(function(r){var b=document.createElement("div");b.className="bar";var i=document.createElement("i");i.className=r.neto>=0?"pos":"neg";i.style.height=Math.max(2,Math.round(Math.abs(r.neto)/mx*120))+"px";i.title=lab(r.k)+": "+money(r.neto);var s=document.createElement("span");s.textContent=lab(r.k);b.appendChild(i);b.appendChild(s);ch.appendChild(b)});
-    var h=isEn()?["Period","Picks (won/settled)","Hit rate","Parlays","Net result"]:["Periodo","Picks (ganados/cerrados)","Acierto","Combinadas","Resultado neto"];
+    var h=isEn()?["Period","Picks (won/settled)","Hit rate","Parlays","Dream parlays*","Net result"]:["Periodo","Picks sencillos (ganados/cerrados)","Acierto","Combinadas","Soñadoras*","Resultado neto"];
     var t='<tr>'+h.map(function(x){return "<th>"+x+"</th>"}).join("")+'</tr>';
-    rows.slice().reverse().forEach(function(r){var c=r.neto>=0?"pos":"neg";t+="<tr><td>"+lab(r.k)+"</td><td class='m'>"+r.pg+" / "+r.pn+"</td><td class='m'>"+pct(r.pg,r.pn)+"</td><td class='m'>"+r.cg+" / "+r.cn+"</td><td class='"+c+"'>"+money(r.neto)+"</td></tr>"});
+    rows.slice().reverse().forEach(function(r){var c=r.neto>=0?"pos":"neg";t+="<tr><td>"+lab(r.k)+"</td><td class='m'>"+r.pg+" / "+r.pn+"</td><td class='m'>"+pct(r.pg,r.pn)+"</td><td class='m'>"+r.cg+" / "+r.cn+"</td><td class='m'>"+(r.sn?(r.sg||0)+" / "+r.sn+" · "+money(r.netoS||0):"–")+"</td><td class='"+c+"'>"+money(r.neto)+"</td></tr>"});
     document.getElementById("stTable").innerHTML=t;
-    document.getElementById("stNote").textContent=(isEn()?"Includes every settled pick and parlay sent to our channels (free and VIP), wins and losses. 1 unit = COP ":"Incluye todos los picks y combinadas cerrados que enviamos a nuestros canales (gratis y VIP), ganados y perdidos. 1 unidad = COP ")+(ST.unidad||0).toLocaleString("es-CO")+(isEn()?". Updated ":". Actualizado ")+ST.actualizado+". "+(isEn()?"Past performance does not guarantee future results.":"Rendimientos pasados no garantizan resultados futuros.");
+    document.getElementById("stNote").textContent=(isEn()?"Includes every settled single pick and parlay sent to our channels (free and VIP), wins and losses. *Dream parlays (high-odds, VIP only) are reported separately and are not part of the hit rate or the net result. 1 unit = COP ":"Incluye todos los picks sencillos y combinadas cerrados que enviamos a nuestros canales (gratis y VIP), ganados y perdidos. *Las soñadoras (combinadas de cuota alta, solo VIP) se reportan aparte y no entran en el acierto ni en el balance neto. 1 unidad = COP ")+(ST.unidad||0).toLocaleString("es-CO")+(isEn()?". Updated ":". Actualizado ")+ST.actualizado+". "+(isEn()?"Past performance does not guarantee future results.":"Rendimientos pasados no garantizan resultados futuros.");
     document.getElementById("stats").hidden=false;
     var nx=document.querySelector(".nextrep"); if(nx) nx.style.display="none";
   }
