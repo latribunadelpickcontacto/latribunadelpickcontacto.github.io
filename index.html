@@ -364,7 +364,7 @@
   }
   function render(){
     if(!ST) return;
-    var rows=(ST[view]||[]).slice(), tot=ST.total;
+    var rows=(ST[view]||[]).slice().sort(function(a,b){return a.k<b.k?-1:a.k>b.k?1:0}), tot=ST.total;
     document.getElementById("kA").textContent=pct(tot.pg,tot.pn)+" ("+tot.pg+"/"+tot.pn+")";
     document.getElementById("kB").textContent=pct(tot.cg,tot.cn)+" ("+tot.cg+"/"+tot.cn+")";
     document.getElementById("kS").textContent=(tot.sn?tot.sg+"/"+tot.sn+" · "+money(tot.netoS||0):"–");
