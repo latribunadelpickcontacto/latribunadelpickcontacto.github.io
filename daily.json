@@ -11,6 +11,17 @@
                       "stake":  "2",
                       "prob":  "78",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "8:30 am",
+                      "deporte":  "Fútbol",
+                      "liga":  "Eerste Divisie",
+                      "partido":  "MVV Maastricht – Vitesse",
+                      "pick":  "Menos de 3,5 goles",
+                      "cuota":  "1.50",
+                      "stake":  "1",
+                      "prob":  "62",
+                      "estado":  "abierto"
                   }
               ]
 }
