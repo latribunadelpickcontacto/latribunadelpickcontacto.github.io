@@ -365,13 +365,13 @@
   }
   function render(){
     if(!ST) return;
-    var rows=(ST[view]||[]).slice().sort(function(a,b){return a.k<b.k?-1:a.k>b.k?1:0}), tot=ST.total;
+    var rows=[].concat(ST[view]||[]).sort(function(a,b){return a.k<b.k?-1:a.k>b.k?1:0}), tot=ST.total;
     document.getElementById("kA").textContent=pct(tot.pg,tot.pn)+" ("+tot.pg+"/"+tot.pn+")";
     document.getElementById("kB").textContent=pct(tot.cg,tot.cn)+" ("+tot.cg+"/"+tot.cn+")";
     document.getElementById("kS").textContent=(tot.sn?tot.sg+"/"+tot.sn+" · "+money(tot.netoS||0):"–");
-    var sw=(ST.semanas||[]).slice().sort(function(a,b){return a.k<b.k?-1:1}), cw=sw.length?sw[sw.length-1]:tot;
+    var sw=[].concat(ST.semanas||[]).sort(function(a,b){return a.k<b.k?-1:1}), cw=sw.length?sw[sw.length-1]:tot;
     document.getElementById("kC").textContent=money(cw.neto);
-    document.getElementById("kD").textContent=(ST.dias||[]).length;
+    document.getElementById("kD").textContent=[].concat(ST.dias||[]).length;
     var last=rows.slice(-14), mx=Math.max.apply(null,last.map(function(r){return Math.abs(r.neto)}).concat([1]));
     var ch=document.getElementById("stChart"); ch.innerHTML="";
     last.forEach(function(r){var b=document.createElement("div");b.className="bar";var i=document.createElement("i");i.className=r.neto>=0?"pos":"neg";i.style.height=Math.max(2,Math.round(Math.abs(r.neto)/mx*120))+"px";i.title=lab(r.k)+": "+money(r.neto);var s=document.createElement("span");s.textContent=lab(r.k);b.appendChild(i);b.appendChild(s);ch.appendChild(b)});
