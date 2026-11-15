@@ -376,7 +376,7 @@
     var ch=document.getElementById("stChart"); ch.innerHTML="";
     last.forEach(function(r){var b=document.createElement("div");b.className="bar";var i=document.createElement("i");i.className=r.neto>=0?"pos":"neg";i.style.height=Math.max(2,Math.round(Math.abs(r.neto)/mx*120))+"px";i.title=lab(r.k)+": "+money(r.neto);var s=document.createElement("span");s.textContent=lab(r.k);b.appendChild(i);b.appendChild(s);ch.appendChild(b)});
     var en=isEn();
-    var h=en?["Period","Played","Won","Lost","Staked","Won","Lost","Net"]:["Periodo","Jugados","Ganados","Perdidos","Apostado","Ganado","Perdido","Neto"];
+    var h=en?["Period","Played","Won","Lost","Staked","Won","Lost","Net"]:["Periodo","Jugados","Ganados","Perdidos","Apostado","Ganado","Perdido","Neto"]; if(window.innerWidth<=600){h=en?["Day","Pl.","W","L","Staked","Won","Lost","Net"]:["Día","Jug.","G","P","Apost.","Ganó","Perdió","Neto"]}
     var mob=window.innerWidth<=600; function f$(n){n=Math.abs(Math.round(n||0)); return (mob?Math.round(n/1000):n).toLocaleString("es-CO")} function mn(n){return mob?((n<0?"-":"+")+Math.abs(Math.round(n/1000)).toLocaleString("es-CO")):money(n)}
     function line(lbl,n,g,p,a,gan,per,tr){var net=(gan||0)-(per||0),c=net>=0?"pos":"neg";return "<tr"+(tr?" class='"+tr+"'":"")+"><td>"+lbl+"</td><td class='m'>"+n+"</td><td class='m'>"+g+"</td><td class='m'>"+p+"</td><td class='m'>"+f$(a)+"</td><td class='m'>"+f$(gan)+"</td><td class='m'>"+f$(per)+"</td><td class='"+c+"'>"+mn(net)+"</td></tr>"}
     var t='<tr>'+h.map(function(x){return "<th>"+x+"</th>"}).join("")+'</tr>';
