@@ -141,6 +141,7 @@
   .st-chart .bar i.pos{background:linear-gradient(180deg,#E5C77B,#C5A059)}
   .st-chart .bar i.neg{background:#8f4a4a;border-radius:0 0 4px 4px}
   .st-chart .bar span{position:absolute;bottom:-22px;font-size:.62rem;color:var(--mut);white-space:nowrap}
+  #stTable tr.dayh td{background:rgba(255,255,255,.05);padding-top:12px;text-align:left}#stTable tr.tot td{border-top:1px solid rgba(255,255,255,.18);font-weight:600}#stTable tr.son td{opacity:.8;font-size:.9em}
   #stTable td.pos{color:#4cc38a} #stTable td.neg{color:#e07a7a} #stTable td,#stTable th{white-space:nowrap}
   .tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
   html,body{max-width:100%;overflow-x:hidden}
@@ -214,7 +215,7 @@
       <div class="kpi"><b id="kA">–</b><span class="es">acierto en picks</span><span class="en">pick hit rate</span></div>
       <div class="kpi"><b id="kB">–</b><span class="es">acierto en combinadas</span><span class="en">parlay hit rate</span></div>
       <div class="kpi"><b id="kS">–</b><span class="es">soñadoras (aparte)</span><span class="en">dream parlays (separate)</span></div>
-      <div class="kpi"><b id="kC">–</b><span class="es">balance neto acumulado</span><span class="en">cumulative net result</span></div>
+      <div class="kpi"><b id="kC">–</b><span class="es">neto de la semana actual</span><span class="en">net result, current week</span></div>
       <div class="kpi"><b id="kD">–</b><span class="es">días registrados</span><span class="en">days recorded</span></div>
     </div>
     <div class="st-tabs" role="tablist">
@@ -368,16 +369,27 @@
     document.getElementById("kA").textContent=pct(tot.pg,tot.pn)+" ("+tot.pg+"/"+tot.pn+")";
     document.getElementById("kB").textContent=pct(tot.cg,tot.cn)+" ("+tot.cg+"/"+tot.cn+")";
     document.getElementById("kS").textContent=(tot.sn?tot.sg+"/"+tot.sn+" · "+money(tot.netoS||0):"–");
-    document.getElementById("kC").textContent=money(tot.neto);
+    var sw=(ST.semanas||[]).slice().sort(function(a,b){return a.k<b.k?-1:1}), cw=sw.length?sw[sw.length-1]:tot;
+    document.getElementById("kC").textContent=money(cw.neto);
     document.getElementById("kD").textContent=(ST.dias||[]).length;
     var last=rows.slice(-14), mx=Math.max.apply(null,last.map(function(r){return Math.abs(r.neto)}).concat([1]));
     var ch=document.getElementById("stChart"); ch.innerHTML="";
     last.forEach(function(r){var b=document.createElement("div");b.className="bar";var i=document.createElement("i");i.className=r.neto>=0?"pos":"neg";i.style.height=Math.max(2,Math.round(Math.abs(r.neto)/mx*120))+"px";i.title=lab(r.k)+": "+money(r.neto);var s=document.createElement("span");s.textContent=lab(r.k);b.appendChild(i);b.appendChild(s);ch.appendChild(b)});
-    var h=isEn()?["Period","Picks (won/settled)","Hit rate","Parlays","Dream parlays*","Net result"]:["Periodo","Picks sencillos (ganados/cerrados)","Acierto","Combinadas","Soñadoras*","Resultado neto"];
+    var en=isEn();
+    var h=en?["Period","Played","Won","Lost","Staked","Won ($)","Lost ($)","Net"]:["Periodo","Jugados","Ganados","Perdidos","Apostado","Ganado","Perdido","Neto"];
+    function f$(n){return "$"+Math.abs(Math.round(n||0)).toLocaleString("es-CO")}
+    function line(lbl,n,g,p,a,gan,per,tr){var net=(gan||0)-(per||0),c=net>=0?"pos":"neg";return "<tr"+(tr?" class='"+tr+"'":"")+"><td>"+lbl+"</td><td class='m'>"+n+"</td><td class='m'>"+g+"</td><td class='m'>"+p+"</td><td class='m'>"+f$(a)+"</td><td class='m'>"+f$(gan)+"</td><td class='m'>"+f$(per)+"</td><td class='"+c+"'>"+money(net)+"</td></tr>"}
     var t='<tr>'+h.map(function(x){return "<th>"+x+"</th>"}).join("")+'</tr>';
-    rows.slice().forEach(function(r){var c=r.neto>=0?"pos":"neg";t+="<tr><td>"+lab(r.k)+"</td><td class='m'>"+r.pg+" / "+r.pn+"</td><td class='m'>"+pct(r.pg,r.pn)+"</td><td class='m'>"+r.cg+" / "+r.cn+"</td><td class='m'>"+(r.sn?(r.sg||0)+" / "+r.sn+" · "+money(r.netoS||0):"–")+"</td><td class='"+c+"'>"+money(r.neto)+"</td></tr>"});
+    rows.forEach(function(r){
+      var tt=(en?"Picks":"Picks sencillos"), cc=(en?"Parlays":"Combinadas");
+      t+="<tr class='dayh'><td colspan='8'><b>"+lab(r.k)+"</b> · "+(en?"hit rate picks ":"acierto picks ")+pct(r.pg,r.pn)+" · "+(en?"parlays ":"combinadas ")+pct(r.cg,r.cn)+"</td></tr>";
+      t+=line(tt,r.pn,r.pg,r.pp,r.pa,r.pgan,r.pper);
+      t+=line(cc,r.cn,r.cg,r.cp,r.ca,r.cgan,r.cper);
+      t+=line("<b>"+(en?"Total":"Total")+"</b>",r.pn+r.cn,r.pg+r.cg,r.pp+r.cp,r.pa+r.ca,r.pgan+r.cgan,r.pper+r.cper,"tot");
+      if(r.sn) t+=line("<i>"+(en?"Dream parlays*":"Soñadoras*")+"</i>",r.sn,r.sg,r.sp,r.sa,r.sgan,r.sper,"son");
+    });
     document.getElementById("stTable").innerHTML=t;
-    document.getElementById("stNote").textContent=(isEn()?"Includes every settled single pick and parlay sent to our channels (free and VIP), wins and losses. *Dream parlays (high-odds, VIP only) are reported separately and are not part of the hit rate or the net result. 1 unit = COP ":"Incluye todos los picks sencillos y combinadas cerrados que enviamos a nuestros canales (gratis y VIP), ganados y perdidos. *Las soñadoras (combinadas de cuota alta, solo VIP) se reportan aparte y no entran en el acierto ni en el balance neto. 1 unidad = COP ")+(ST.unidad||0).toLocaleString("es-CO")+". "+(isEn()?"Past performance does not guarantee future results.":"Rendimientos pasados no garantizan resultados futuros.");
+    document.getElementById("stNote").textContent=(isEn()?"Each day is a fixed figure: everything played and settled that day (free and VIP), with amount staked, won and lost. A week is the sum of its days (Monday to Sunday). *Dream parlays (high-odds, VIP only) are reported separately and are not part of the hit rate or the net result. Stake varies from 0.5 to 5 units per pick. 1 unit = COP":"Cada día es una cifra fija: todo lo jugado y cerrado ese día (gratis y VIP), con lo apostado, lo ganado y lo perdido. La semana es la suma de sus días (lunes a domingo). *Las soñadoras (combinadas de cuota alta, solo VIP) se reportan aparte y no entran en el acierto ni en el neto. Stake variable de 0,5 a 5 unidades por pick. 1 unidad = COP")+(ST.unidad||0).toLocaleString("es-CO")+". "+(isEn()?"Past performance does not guarantee future results.":"Rendimientos pasados no garantizan resultados futuros.");
     document.getElementById("stats").hidden=false;
     var nx=document.querySelector(".nextrep"); if(nx) nx.style.display="none";
   }
