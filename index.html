@@ -135,17 +135,17 @@
   .st-tabs{display:flex;gap:8px;margin:6px 0 16px;flex-wrap:wrap}
   .st-tabs button{background:transparent;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font:600 .85rem var(--sans);cursor:pointer}
   .st-tabs button.on{background:var(--acc);color:#0B0C0E;border-color:var(--acc)}
-  .st-chart{display:flex;align-items:flex-end;gap:6px;height:170px;padding:14px 12px 28px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:16px;overflow-x:auto;position:relative}
-  .st-chart .bar{flex:0 0 28px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+  .st-chart{display:flex;align-items:flex-end;gap:8px;height:210px;padding:26px 12px 50px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:16px;overflow-x:auto;position:relative}
+  .st-chart .bar{flex:0 0 38px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
   .st-chart .bar i{display:block;width:100%;border-radius:4px 4px 0 0;min-height:2px}
-  .st-chart .bar i.pos{background:linear-gradient(180deg,#E5C77B,#C5A059)}
+  .st-chart .bar i.won{background:linear-gradient(180deg,#E5C77B,#C5A059);border-radius:0}.st-chart .bar i.lost{background:#8f4a4a;border-radius:4px 4px 0 0}.st-chart .bar i.won:only-of-type{border-radius:4px 4px 0 0}.st-chart .bar em{font-style:normal;font-size:.66rem;color:var(--txt,#eee);margin-bottom:3px;white-space:nowrap}.st-chart .bar small{position:absolute;bottom:-38px;font-size:.58rem;white-space:nowrap}.st-chart .bar small.pos{color:#4cc38a}.st-chart .bar small.neg{color:#e07a7a}
   .st-chart .bar i.neg{background:#8f4a4a;border-radius:0 0 4px 4px}
   .st-chart .bar span{position:absolute;bottom:-22px;font-size:.62rem;color:var(--mut);white-space:nowrap}
   #stTable tr.dayh td{background:rgba(255,255,255,.05);padding-top:12px;text-align:left}#stTable tr.tot td{border-top:1px solid rgba(255,255,255,.18);font-weight:600}#stTable tr.son td{opacity:.8;font-size:.9em}
   #stTable td.pos{color:#4cc38a} #stTable td.neg{color:#e07a7a} #stTable td,#stTable th{white-space:nowrap}
   .tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
   html,body{max-width:100%;overflow-x:hidden}
-  @media(max-width:600px){#stTable th,#stTable td{white-space:normal;padding:7px 3px;font-size:.64rem;line-height:1.2;letter-spacing:0}#stTable th{font-size:.54rem;letter-spacing:0}#stTable td:first-child,#stTable th:first-child{padding-left:6px}.st-chart{height:140px}.tblwrap table{min-width:0}}
+  @media(max-width:600px){#stTable th,#stTable td{white-space:normal;padding:7px 3px;font-size:.64rem;line-height:1.2;letter-spacing:0}#stTable th{font-size:.54rem;letter-spacing:0}#stTable td:first-child,#stTable th:first-child{padding-left:6px}.st-chart{height:190px;gap:6px}.st-chart .bar{flex:0 0 34px}.tblwrap table{min-width:0}}
   @media(max-width:820px){.hgrid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.hr{max-width:380px}nav a.h{display:none}.hero{padding:52px 0 40px}}
 </style>
 </head>
@@ -223,6 +223,7 @@
       <button type="button" data-v="semanas"><span class="es">Por semana</span><span class="en">By week</span></button>
       <button type="button" data-v="meses"><span class="es">Por mes</span><span class="en">By month</span></button>
     </div>
+    <p class="note" id="stLeg" style="margin:0 0 8px"><span class="es"><b style="color:#C5A059">&#9632;</b> ganados · <b style="color:#8f4a4a">&#9632;</b> perdidos · la altura es la cantidad de picks y combinadas jugados · arriba: ganados/jugados · abajo: neto del día (en miles de pesos)</span><span class="en"><b style="color:#C5A059">&#9632;</b> won · <b style="color:#8f4a4a">&#9632;</b> lost · bar height = picks and parlays played · top: won/played · bottom: net of the day (thousands of pesos)</span></p>
     <div id="stChart" class="st-chart" aria-hidden="true"></div>
     <div class="tblwrap"><table id="stTable"></table></div>
     <p class="note" id="stNote"></p>
@@ -372,9 +373,21 @@
     var sw=[].concat(ST.semanas||[]).sort(function(a,b){return a.k<b.k?-1:1}), cw=sw.length?sw[sw.length-1]:tot;
     document.getElementById("kC").textContent=money(cw.neto);
     document.getElementById("kD").textContent=[].concat(ST.dias||[]).length;
-    var last=rows.slice(-14), mx=Math.max.apply(null,last.map(function(r){return Math.abs(r.neto)}).concat([1]));
+    var last=rows.slice(-14), mx=Math.max.apply(null,last.map(function(r){return (r.pn||0)+(r.cn||0)}).concat([1]));
     var ch=document.getElementById("stChart"); ch.innerHTML="";
-    last.forEach(function(r){var b=document.createElement("div");b.className="bar";var i=document.createElement("i");i.className=r.neto>=0?"pos":"neg";i.style.height=Math.max(2,Math.round(Math.abs(r.neto)/mx*120))+"px";i.title=lab(r.k)+": "+money(r.neto);var s=document.createElement("span");s.textContent=lab(r.k);b.appendChild(i);b.appendChild(s);ch.appendChild(b)});
+    var uh=Math.floor(110/mx);
+    function k$(n){var a=Math.abs(Math.round((n||0)/1000));return (n<0?"-":"+")+a.toLocaleString("es-CO")+"k"}
+    last.forEach(function(r){
+      var tot=(r.pn||0)+(r.cn||0), won=(r.pg||0)+(r.cg||0), lost=tot-won;
+      var b=document.createElement("div");b.className="bar";
+      b.title=lab(r.k)+": "+tot+(isEn()?" played, ":" jugados, ")+won+(isEn()?" won, ":" ganados, ")+lost+(isEn()?" lost · net ":" perdidos · neto ")+money(r.neto);
+      var t=document.createElement("em");t.textContent=won+"/"+tot;b.appendChild(t);
+      var iL=document.createElement("i");iL.className="lost";iL.style.height=(lost*uh)+"px";if(!lost)iL.style.display="none";
+      var iW=document.createElement("i");iW.className="won";iW.style.height=Math.max(2,won*uh)+"px";
+      b.appendChild(iL);b.appendChild(iW);
+      var s=document.createElement("span");s.textContent=lab(r.k);b.appendChild(s);
+      var n=document.createElement("small");n.className=r.neto>=0?"pos":"neg";n.textContent=k$(r.neto);b.appendChild(n);
+      ch.appendChild(b)});
     var en=isEn();
     var h=en?["Period","Played","Won","Lost","Staked","Won","Lost","Net"]:["Periodo","Jugados","Ganados","Perdidos","Apostado","Ganado","Perdido","Neto"]; if(window.innerWidth<=600){h=en?["Day","Pl.","W","L","Staked","Won","Lost","Net"]:["Día","Jug.","G","P","Apost.","Ganó","Perdió","Neto"]}
     var mob=window.innerWidth<=600; function f$(n){n=Math.abs(Math.round(n||0)); return (mob?Math.round(n/1000):n).toLocaleString("es-CO")} function mn(n){return mob?((n<0?"-":"+")+Math.abs(Math.round(n/1000)).toLocaleString("es-CO")):money(n)}
