@@ -22,6 +22,17 @@
                       "stake":  "2",
                       "prob":  "72",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "6:00 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Uruguay - Liga AUF",
+                      "partido":  "Montevideo Wanderers – Juventud de Las Piedras",
+                      "pick":  "Más de 1,5 goles",
+                      "cuota":  "1.30",
+                      "stake":  "2",
+                      "prob":  "71",
+                      "estado":  "abierto"
                   }
               ]
 }
