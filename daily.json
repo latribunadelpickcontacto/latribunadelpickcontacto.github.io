@@ -1,38 +1,16 @@
 {
-    "fecha":  "15/11",
+    "fecha":  "16/11",
     "picks":  [
                   {
-                      "hora":  "8:00 am",
-                      "deporte":  "Fútbol",
-                      "liga":  "LaLiga 2",
-                      "partido":  "CD Tenerife – AD Ceuta",
-                      "pick":  "Más de 1,5 goles",
-                      "cuota":  "1.30",
-                      "stake":  "2",
-                      "prob":  "78",
-                      "estado":  "ganado"
-                  },
-                  {
-                      "hora":  "8:30 am",
-                      "deporte":  "Fútbol",
-                      "liga":  "Eerste Divisie",
-                      "partido":  "MVV Maastricht – Vitesse",
-                      "pick":  "Menos de 3,5 goles",
-                      "cuota":  "1.50",
-                      "stake":  "1",
-                      "prob":  "62",
-                      "estado":  "ganado"
-                  },
-                  {
-                      "hora":  "9:00 am",
+                      "hora":  "10:00 am",
                       "deporte":  "Fútbol",
                       "liga":  "UEFA Nations League",
-                      "partido":  "Chipre – Montenegro",
-                      "pick":  "Menos de 3,5 goles",
-                      "cuota":  "1.30",
+                      "partido":  "Islas Feroe – Moldavia",
+                      "pick":  "Más de 1,5 goles",
+                      "cuota":  "1.40",
                       "stake":  "3",
-                      "prob":  "78",
-                      "estado":  "perdido"
+                      "prob":  "72",
+                      "estado":  "abierto"
                   }
               ]
 }
