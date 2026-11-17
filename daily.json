@@ -22,6 +22,17 @@
                       "stake":  "1",
                       "prob":  "66",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "2:45 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Europa - UEFA Nations League",
+                      "partido":  "Irlanda – Kosovo",
+                      "pick":  "Irlanda gana o empata (1X)",
+                      "cuota":  "1.31",
+                      "stake":  "2",
+                      "prob":  "70",
+                      "estado":  "abierto"
                   }
               ]
 }
