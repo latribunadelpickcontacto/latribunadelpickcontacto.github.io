@@ -215,8 +215,8 @@
       <div class="kpi"><b id="kA">–</b><span class="es">acierto en picks</span><span class="en">pick hit rate</span></div>
       <div class="kpi"><b id="kB">–</b><span class="es">acierto en combinadas</span><span class="en">parlay hit rate</span></div>
       <div class="kpi"><b id="kS">–</b><span class="es">soñadoras (aparte)</span><span class="en">dream parlays (separate)</span></div>
-      <div class="kpi"><b id="kC">–</b><span class="es">neto de la semana actual</span><span class="en">net result, current week</span></div>
-      <div class="kpi"><b id="kD">–</b><span class="es">días registrados</span><span class="en">days recorded</span></div>
+      <div class="kpi"><b id="kC">–</b><span class="es" id="kCl">neto de la semana actual</span><span class="en">net result, current week</span></div>
+      <div class="kpi"><b id="kD">–</b><span class="es">neto acumulado desde el 11/11</span><span class="en">cumulative net since 11/11</span></div>
     </div>
     <div class="st-tabs" role="tablist">
       <button type="button" data-v="dias" class="on"><span class="es">Por día</span><span class="en">By day</span></button>
@@ -226,6 +226,8 @@
     <p class="note" id="stLeg" style="margin:0 0 8px"><span class="es"><b style="color:#C5A059">&#9632;</b> ganados · <b style="color:#8f4a4a">&#9632;</b> perdidos · la altura es la cantidad de picks y combinadas jugados · arriba: ganados/jugados · abajo: neto del día (en miles de pesos)</span><span class="en"><b style="color:#C5A059">&#9632;</b> won · <b style="color:#8f4a4a">&#9632;</b> lost · bar height = picks and parlays played · top: won/played · bottom: net of the day (thousands of pesos)</span></p>
     <div id="stChart" class="st-chart" aria-hidden="true"></div>
     <div class="tblwrap"><table id="stTable"></table></div>
+    <p class="note" id="stMas" style="margin:10px 0 6px"><span class="es">La tabla muestra los 5 períodos más recientes. El historial completo (todos los días, semanas y meses) se descarga en Excel.</span><span class="en">The table shows the 5 most recent periods. The full history (all days, weeks and months) can be downloaded as Excel.</span></p>
+    <button type="button" id="stDl" class="btn" style="margin:0 0 14px;padding:10px 16px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:inherit;cursor:pointer"><span class="es">&#11015; Descargar todos los datos (Excel)</span><span class="en">&#11015; Download all data (Excel)</span></button>
     <p class="note" id="stNote"></p>
   </div>
   <div class="tblwrap"><table>
@@ -370,9 +372,9 @@
     document.getElementById("kA").textContent=pct(tot.pg,tot.pn)+" ("+tot.pg+"/"+tot.pn+")";
     document.getElementById("kB").textContent=pct(tot.cg,tot.cn)+" ("+tot.cg+"/"+tot.cn+")";
     document.getElementById("kS").textContent=(tot.sn?tot.sg+"/"+tot.sn+" · "+money(tot.netoS||0):"–");
-    var sw=[].concat(ST.semanas||[]).sort(function(a,b){return a.k<b.k?-1:1}), cw=sw.length?sw[sw.length-1]:tot;
+    var sw=[].concat(ST.semanas||[]).sort(function(a,b){return a.k<b.k?-1:1}), cw=sw.length?sw[sw.length-1]:tot; var wl=document.getElementById("kCl"); if(wl&&sw.length){var q=cw.k.split("-"),d0=new Date(+q[0],+q[1]-1,+q[2]+6);wl.textContent="neto de la semana actual (desde el "+q[2]+"/"+q[1]+")"}
     document.getElementById("kC").textContent=money(cw.neto);
-    document.getElementById("kD").textContent=[].concat(ST.dias||[]).length;
+    document.getElementById("kD").textContent=money(tot.neto);
     var last=rows.slice(-14), mx=Math.max.apply(null,last.map(function(r){return (r.pn||0)+(r.cn||0)}).concat([1]));
     var ch=document.getElementById("stChart"); ch.innerHTML="";
     var uh=Math.floor(110/mx);
@@ -393,7 +395,7 @@
     var mob=window.innerWidth<=600; function f$(n){n=Math.abs(Math.round(n||0)); return (mob?Math.round(n/1000):n).toLocaleString("es-CO")} function mn(n){return mob?((n<0?"-":"+")+Math.abs(Math.round(n/1000)).toLocaleString("es-CO")):money(n)}
     function line(lbl,n,g,p,a,gan,per,tr){var net=(gan||0)-(per||0),c=net>=0?"pos":"neg";return "<tr"+(tr?" class='"+tr+"'":"")+"><td>"+lbl+"</td><td class='m'>"+n+"</td><td class='m'>"+g+"</td><td class='m'>"+p+"</td><td class='m'>"+f$(a)+"</td><td class='m'>"+f$(gan)+"</td><td class='m'>"+f$(per)+"</td><td class='"+c+"'>"+mn(net)+"</td></tr>"}
     var t='<tr>'+h.map(function(x){return "<th>"+x+"</th>"}).join("")+'</tr>';
-    rows.forEach(function(r){
+    rows.slice(-5).forEach(function(r){
       var tt=(en?"Picks":"Picks sencillos"), cc=(en?"Parlays":"Combinadas");
       t+="<tr class='dayh'><td colspan='8'><b>"+lab(r.k)+"</b> · "+(en?"hit rate picks ":"acierto picks ")+pct(r.pg,r.pn)+" · "+(en?"parlays ":"combinadas ")+pct(r.cg,r.cn)+"</td></tr>";
       t+=line(tt,r.pn,r.pg,r.pp,r.pa,r.pgan,r.pper);
@@ -408,6 +410,21 @@
   }
   try{
     fetch("stats.json?v="+Date.now()).then(function(r){return r.ok?r.json():null}).then(function(d){ if(d&&d.dias&&d.dias.length){ST=d;render()} }).catch(function(){});
+    document.getElementById("stDl").onclick=function(){
+      if(!ST) return;
+      function build(){
+        function fila(r,tp){var nt=(r.pgan||0)-(r.pper||0),nc=(r.cgan||0)-(r.cper||0),ns=(r.sgan||0)-(r.sper||0);
+          return [tp,r.pn||0,r.pg||0,r.pp||0,r.pa||0,r.pgan||0,r.pper||0,nt, r.cn||0,r.cg||0,r.cp||0,r.ca||0,r.cgan||0,r.cper||0,nc, (r.pn||0)+(r.cn||0),(r.pg||0)+(r.cg||0),(r.pp||0)+(r.cp||0),(r.pa||0)+(r.ca||0),nt+nc, r.sn||0,r.sg||0,ns]}
+        var h=["Periodo","Picks jugados","Picks ganados","Picks perdidos","Picks apostado (COP)","Picks ganado (COP)","Picks perdido (COP)","Picks neto (COP)","Combinadas jugadas","Combinadas ganadas","Combinadas perdidas","Combinadas apostado (COP)","Combinadas ganado (COP)","Combinadas perdido (COP)","Combinadas neto (COP)","Total jugados","Total ganados","Total perdidos","Total apostado (COP)","NETO TOTAL (COP)","Soñadoras jugadas (aparte)","Soñadoras ganadas","Soñadoras neto (COP)"];
+        var wb=XLSX.utils.book_new();
+        [["Diario","dias"],["Semanal","semanas"],["Mensual","meses"]].forEach(function(p){
+          var rs=[].concat(ST[p[1]]||[]).sort(function(a,b){return a.k<b.k?-1:1}).map(function(r){return fila(r,r.k)});
+          var ws=XLSX.utils.aoa_to_sheet([h].concat(rs)); ws["!cols"]=h.map(function(x,i){return {wch:i?Math.max(12,x.length):12}}); XLSX.utils.book_append_sheet(wb,ws,p[0])});
+        var nota=XLSX.utils.aoa_to_sheet([["La Tribuna del Pick - resultados"],["Fuente: Picks_Bot.xlsx. Cifras en pesos colombianos (COP). 1 unidad = "+(ST.unidad||100000)+" COP."],["Cada dia es una cifra fija; la semana (lunes a domingo) y el mes son la suma de sus dias."],["Las soñadoras se reportan aparte y no entran en el neto total."],["Actualizado: "+(ST.actualizado||"")],["+18 · Juega con responsabilidad. Ningún pronóstico es seguro."]]);
+        XLSX.utils.book_append_sheet(wb,nota,"Notas");
+        XLSX.writeFile(wb,"La_Tribuna_del_Pick_resultados.xlsx")}
+      if(window.XLSX){build();return}
+      var s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js";s.onload=build;s.onerror=function(){alert(isEn()?"Could not load the download tool.":"No se pudo cargar la herramienta de descarga.")};document.head.appendChild(s)};
     document.querySelectorAll(".st-tabs button").forEach(function(b){b.onclick=function(){view=b.getAttribute("data-v");document.querySelectorAll(".st-tabs button").forEach(function(x){x.classList.toggle("on",x===b)});render()}});
     document.getElementById("bes").addEventListener("click",render); document.getElementById("ben").addEventListener("click",render);
   }catch(e){}
