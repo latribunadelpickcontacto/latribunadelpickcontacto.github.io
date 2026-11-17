@@ -1,38 +1,27 @@
 {
-    "fecha":  "16/11",
+    "fecha":  "17/11",
     "picks":  [
                   {
-                      "hora":  "10:00 am",
+                      "hora":  "2:45 pm",
                       "deporte":  "Fútbol",
-                      "liga":  "UEFA Nations League",
-                      "partido":  "Islas Feroe – Moldavia",
-                      "pick":  "Más de 1,5 goles",
-                      "cuota":  "1.40",
-                      "stake":  "3",
-                      "prob":  "72",
-                      "estado":  "perdido"
+                      "liga":  "Europa - UEFA Nations League",
+                      "partido":  "Gales – Portugal",
+                      "pick":  "Menos de 3,5 goles",
+                      "cuota":  "1.50",
+                      "stake":  "1",
+                      "prob":  "65",
+                      "estado":  "abierto"
                   },
                   {
                       "hora":  "2:45 pm",
                       "deporte":  "Fútbol",
-                      "liga":  "UEFA Nations League",
-                      "partido":  "Alemania – Países Bajos",
-                      "pick":  "Menos de 3,5 goles",
-                      "cuota":  "1.83",
-                      "stake":  "2",
-                      "prob":  "72",
-                      "estado":  "perdido"
-                  },
-                  {
-                      "hora":  "6:00 pm",
-                      "deporte":  "Fútbol",
-                      "liga":  "Uruguay - Liga AUF",
-                      "partido":  "Montevideo Wanderers – Juventud de Las Piedras",
-                      "pick":  "Más de 1,5 goles",
-                      "cuota":  "1.30",
-                      "stake":  "2",
-                      "prob":  "71",
-                      "estado":  "ganado"
+                      "liga":  "Europa - UEFA Nations League",
+                      "partido":  "Ucrania – Georgia",
+                      "pick":  "Ucrania gana o empata (1X)",
+                      "cuota":  "1.41",
+                      "stake":  "1",
+                      "prob":  "66",
+                      "estado":  "abierto"
                   }
               ]
 }
