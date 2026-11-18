@@ -1,38 +1,16 @@
 {
-    "fecha":  "17/11",
+    "fecha":  "18/11",
     "picks":  [
                   {
-                      "hora":  "2:45 pm",
+                      "hora":  "3:00 pm",
                       "deporte":  "Fútbol",
-                      "liga":  "Europa - UEFA Nations League",
-                      "partido":  "Gales – Portugal",
-                      "pick":  "Menos de 3,5 goles",
-                      "cuota":  "1.50",
+                      "liga":  "Perú - Liga 1",
+                      "partido":  "Alianza Atlético de Sullana – Melgar",
+                      "pick":  "Ambos anotan Sí",
+                      "cuota":  "1.62",
                       "stake":  "1",
-                      "prob":  "65",
-                      "estado":  "perdido"
-                  },
-                  {
-                      "hora":  "2:45 pm",
-                      "deporte":  "Fútbol",
-                      "liga":  "Europa - UEFA Nations League",
-                      "partido":  "Ucrania – Georgia",
-                      "pick":  "Ucrania gana o empata (1X)",
-                      "cuota":  "1.41",
-                      "stake":  "1",
-                      "prob":  "66",
-                      "estado":  "ganado"
-                  },
-                  {
-                      "hora":  "2:45 pm",
-                      "deporte":  "Fútbol",
-                      "liga":  "Europa - UEFA Nations League",
-                      "partido":  "Irlanda – Kosovo",
-                      "pick":  "Irlanda gana o empata (1X)",
-                      "cuota":  "1.31",
-                      "stake":  "2",
-                      "prob":  "70",
-                      "estado":  "ganado"
+                      "prob":  "59",
+                      "estado":  "abierto"
                   }
               ]
 }
