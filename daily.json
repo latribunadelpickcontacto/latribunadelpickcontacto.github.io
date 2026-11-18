@@ -22,6 +22,17 @@
                       "stake":  "1",
                       "prob":  "68",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "7:30 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Brasil - Brasileirão Betano (Serie A)",
+                      "partido":  "Corinthians – Botafogo",
+                      "pick":  "Menos de 3,5 goles",
+                      "cuota":  "1.33",
+                      "stake":  "1",
+                      "prob":  "70",
+                      "estado":  "abierto"
                   }
               ]
 }
