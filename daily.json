@@ -11,6 +11,17 @@
                       "stake":  "1",
                       "prob":  "59",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "7:30 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Brasil - Brasileirão Betano (Serie A)",
+                      "partido":  "Grêmio – Bahia",
+                      "pick":  "Grêmio gana o empata (1X)",
+                      "cuota":  "1.36",
+                      "stake":  "1",
+                      "prob":  "68",
+                      "estado":  "abierto"
                   }
               ]
 }
