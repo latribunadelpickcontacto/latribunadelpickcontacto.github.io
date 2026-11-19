@@ -22,6 +22,17 @@
                       "stake":  "1",
                       "prob":  "67",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "7:45 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Colombia - Primera B",
+                      "partido":  "Real Cartagena – Tigres FC",
+                      "pick":  "Menos de 3,5 goles",
+                      "cuota":  "1.33",
+                      "stake":  "1",
+                      "prob":  "69",
+                      "estado":  "abierto"
                   }
               ]
 }
