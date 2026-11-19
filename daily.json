@@ -11,6 +11,17 @@
                       "stake":  "1",
                       "prob":  "64",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "7:30 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Brasil - Brasileirão Betano (Serie A)",
+                      "partido":  "São Paulo – Fluminense",
+                      "pick":  "Más de 1,5 goles",
+                      "cuota":  "1.36",
+                      "stake":  "1",
+                      "prob":  "67",
+                      "estado":  "abierto"
                   }
               ]
 }
