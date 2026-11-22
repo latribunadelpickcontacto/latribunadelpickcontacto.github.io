@@ -1,26 +1,15 @@
 {
-    "fecha":  "21/11",
+    "fecha":  "22/11",
     "picks":  [
                   {
-                      "hora":  "12:00 pm",
+                      "hora":  "12:30 pm",
                       "deporte":  "Fútbol",
-                      "liga":  "Suiza - Super League",
-                      "partido":  "Young Boys – Thun",
-                      "pick":  "Ambos anotan Sí",
-                      "cuota":  "1.36",
-                      "stake":  "3",
-                      "prob":  "69",
-                      "estado":  "ganado"
-                  },
-                  {
-                      "hora":  "8:00 pm",
-                      "deporte":  "Fútbol",
-                      "liga":  "México - Liga MX",
-                      "partido":  "Pumas UNAM – Monterrey",
-                      "pick":  "Doble oportunidad 12: no hay empate",
+                      "liga":  "España - LaLiga",
+                      "partido":  "Osasuna – Málaga",
+                      "pick":  "Más de 1,5 goles",
                       "cuota":  "1.30",
-                      "stake":  "2",
-                      "prob":  "69",
+                      "stake":  "3",
+                      "prob":  "72",
                       "estado":  "abierto"
                   }
               ]
