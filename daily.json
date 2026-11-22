@@ -11,6 +11,17 @@
                       "stake":  "3",
                       "prob":  "69",
                       "estado":  "ganado"
+                  },
+                  {
+                      "hora":  "8:00 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "México - Liga MX",
+                      "partido":  "Pumas UNAM – Monterrey",
+                      "pick":  "Doble oportunidad 12: no hay empate",
+                      "cuota":  "1.30",
+                      "stake":  "2",
+                      "prob":  "69",
+                      "estado":  "abierto"
                   }
               ]
 }
