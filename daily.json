@@ -1,16 +1,16 @@
 {
-    "fecha":  "22/11",
+    "fecha":  "23/11",
     "picks":  [
                   {
-                      "hora":  "12:30 pm",
+                      "hora":  "1:00 pm",
                       "deporte":  "Fútbol",
-                      "liga":  "España - LaLiga",
-                      "partido":  "Osasuna – Málaga",
+                      "liga":  "Rumania - Superliga",
+                      "partido":  "Sepsi OSK – Rapid București",
                       "pick":  "Más de 1,5 goles",
                       "cuota":  "1.30",
-                      "stake":  "3",
+                      "stake":  "4",
                       "prob":  "72",
-                      "estado":  "perdido"
+                      "estado":  "abierto"
                   }
               ]
 }
