@@ -11,6 +11,17 @@
                       "stake":  "4",
                       "prob":  "73",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "3:00 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Europa - UEFA Champions League",
+                      "partido":  "RB Leipzig – Lens",
+                      "pick":  "Más de 2,5 goles",
+                      "cuota":  "1.30",
+                      "stake":  "3",
+                      "prob":  "73",
+                      "estado":  "abierto"
                   }
               ]
 }
