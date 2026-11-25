@@ -10,7 +10,7 @@
                       "cuota":  "1.33",
                       "stake":  "2",
                       "prob":  "71",
-                      "estado":  "abierto"
+                      "estado":  "ganado"
                   },
                   {
                       "hora":  "3:00 pm",
@@ -18,6 +18,17 @@
                       "liga":  "Europa - UEFA Champions League",
                       "partido":  "Paris Saint-Germain – AS Roma",
                       "pick":  "Más de 2,5 goles",
+                      "cuota":  "1.33",
+                      "stake":  "3",
+                      "prob":  "71",
+                      "estado":  "ganado"
+                  },
+                  {
+                      "hora":  "6:00 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Brasil - Brasileirão Betano (Serie A)",
+                      "partido":  "Atlético Mineiro – Corinthians",
+                      "pick":  "Más de 1,5 goles",
                       "cuota":  "1.33",
                       "stake":  "3",
                       "prob":  "71",
