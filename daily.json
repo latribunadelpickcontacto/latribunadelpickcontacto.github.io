@@ -1,26 +1,15 @@
 {
-    "fecha":  "24/11",
+    "fecha":  "25/11",
     "picks":  [
                   {
                       "hora":  "2:45 pm",
                       "deporte":  "Fútbol",
                       "liga":  "Inglaterra - Championship",
-                      "partido":  "Charlton Athletic – Lincoln City",
-                      "pick":  "Más de 1,5 goles",
-                      "cuota":  "1.30",
-                      "stake":  "4",
-                      "prob":  "73",
-                      "estado":  "abierto"
-                  },
-                  {
-                      "hora":  "3:00 pm",
-                      "deporte":  "Fútbol",
-                      "liga":  "Europa - UEFA Champions League",
-                      "partido":  "RB Leipzig – Lens",
-                      "pick":  "Más de 2,5 goles",
-                      "cuota":  "1.30",
-                      "stake":  "3",
-                      "prob":  "73",
+                      "partido":  "Burnley – Birmingham City",
+                      "pick":  "Doble oportunidad 12: no hay empate",
+                      "cuota":  "1.33",
+                      "stake":  "2",
+                      "prob":  "71",
                       "estado":  "abierto"
                   }
               ]
