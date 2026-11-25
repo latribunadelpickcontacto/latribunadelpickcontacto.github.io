@@ -11,6 +11,17 @@
                       "stake":  "2",
                       "prob":  "71",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "3:00 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Europa - UEFA Champions League",
+                      "partido":  "Paris Saint-Germain – AS Roma",
+                      "pick":  "Más de 2,5 goles",
+                      "cuota":  "1.33",
+                      "stake":  "3",
+                      "prob":  "71",
+                      "estado":  "abierto"
                   }
               ]
 }
