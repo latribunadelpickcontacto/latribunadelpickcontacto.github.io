@@ -11,6 +11,17 @@
                       "stake":  "2",
                       "prob":  "58",
                       "estado":  "abierto"
+                  },
+                  {
+                      "hora":  "6:00 pm",
+                      "deporte":  "Fútbol",
+                      "liga":  "Brasil - Brasileirão Betano",
+                      "partido":  "Fluminense – Cruzeiro",
+                      "pick":  "Doble oportunidad 1X: Fluminense",
+                      "cuota":  "1.33",
+                      "stake":  "2",
+                      "prob":  "66",
+                      "estado":  "abierto"
                   }
               ]
 }
