@@ -1,37 +1,15 @@
 {
-    "fecha":  "25/11",
+    "fecha":  "27/11",
     "picks":  [
                   {
-                      "hora":  "2:45 pm",
+                      "hora":  "10:30 am",
                       "deporte":  "Fútbol",
-                      "liga":  "Inglaterra - Championship",
-                      "partido":  "Burnley – Birmingham City",
-                      "pick":  "Doble oportunidad 12: no hay empate",
-                      "cuota":  "1.33",
+                      "liga":  "Rumania - SuperLiga",
+                      "partido":  "Universitatea Cluj – Sepsi OSK",
+                      "pick":  "Gana Universitatea Cluj",
+                      "cuota":  "1.53",
                       "stake":  "2",
-                      "prob":  "71",
-                      "estado":  "ganado"
-                  },
-                  {
-                      "hora":  "3:00 pm",
-                      "deporte":  "Fútbol",
-                      "liga":  "Europa - UEFA Champions League",
-                      "partido":  "Paris Saint-Germain – AS Roma",
-                      "pick":  "Más de 2,5 goles",
-                      "cuota":  "1.33",
-                      "stake":  "3",
-                      "prob":  "71",
-                      "estado":  "ganado"
-                  },
-                  {
-                      "hora":  "6:00 pm",
-                      "deporte":  "Fútbol",
-                      "liga":  "Brasil - Brasileirão Betano (Serie A)",
-                      "partido":  "Atlético Mineiro – Corinthians",
-                      "pick":  "Más de 1,5 goles",
-                      "cuota":  "1.33",
-                      "stake":  "3",
-                      "prob":  "71",
+                      "prob":  "58",
                       "estado":  "abierto"
                   }
               ]
