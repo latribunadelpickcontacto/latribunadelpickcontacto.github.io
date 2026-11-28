@@ -1,26 +1,15 @@
 {
-    "fecha":  "27/11",
+    "fecha":  "28/11",
     "picks":  [
                   {
-                      "hora":  "10:30 am",
+                      "hora":  "1:00 pm",
                       "deporte":  "Fútbol",
-                      "liga":  "Rumania - SuperLiga",
-                      "partido":  "Universitatea Cluj – Sepsi OSK",
-                      "pick":  "Gana Universitatea Cluj",
-                      "cuota":  "1.53",
-                      "stake":  "2",
-                      "prob":  "58",
-                      "estado":  "abierto"
-                  },
-                  {
-                      "hora":  "6:00 pm",
-                      "deporte":  "Fútbol",
-                      "liga":  "Brasil - Brasileirão Betano",
-                      "partido":  "Fluminense – Cruzeiro",
-                      "pick":  "Doble oportunidad 1X: Fluminense",
-                      "cuota":  "1.33",
-                      "stake":  "2",
-                      "prob":  "66",
+                      "liga":  "Portugal - Liga Portugal Betclic",
+                      "partido":  "Académico Viseu – Alverca",
+                      "pick":  "Más de 1,5 goles",
+                      "cuota":  "1.30",
+                      "stake":  "4",
+                      "prob":  "72",
                       "estado":  "abierto"
                   }
               ]
